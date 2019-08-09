@@ -1,0 +1,24 @@
+<div class="black">
+  <h1>
+    {{name}}
+  </h1>
+  <p>
+    {{ email }}
+  </p>
+  <a href="{{website}}" target="_blank">
+    Visita mi sitio web
+  </a>
+
+  <button (click)="toggleHobbies()" class="btn">
+    {{showHobbies ? 'Hide Hobbies' : 'Show Hobbies'}}
+  </button>
+
+  <div *ngIf="showHobbies" class="component2">
+    <h3>Hobbies</h3>
+    <ul>
+      <li *ngFor="let hobby of hobbies">
+        {{hobby}}
+      </li>
+    </ul>
+  </div>
+</div>
