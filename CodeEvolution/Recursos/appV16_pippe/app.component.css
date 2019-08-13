@@ -1,0 +1,18 @@
+.black{
+    background-color: #eee;
+    color: black;
+}
+
+.component2{
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+
+.btn{
+    padding: 20px;
+    color: white;
+    background-color: brown;
+    display: block;
+    margin: 3px;
+}

@@ -1,0 +1,46 @@
+<div class="black">
+  <h1>
+    {{name}}
+  </h1>
+  <p>
+    {{ email }}
+  </p>
+  <a href="{{website}}" target="_blank">
+    Visita mi sitio web
+  </a>
+
+  <button (click)="toggleHobbies()" class="btn">
+    {{showHobbies ? 'Hide Hobbies' : 'Show Hobbies'}}
+  </button>
+
+  <div *ngIf="showHobbies" class="component2">
+    <h3>Hobbies</h3>
+    <ul>
+      <li *ngFor="let hobby of hobbies">
+        {{hobby}}
+      </li>
+    </ul>
+    <form (submit) = 'newHobby(hobby)'>
+      <input #hobby type="text" name="hobby" placeholder="hobby">
+    </form>
+  </div>
+</div>
+
+<div class="black">
+  <h3>Modify the Content</h3>
+  <label for="name">Name: </label>
+  <input type="text" name="name" placeholder="change the name" 
+  [(ngModel)] = "name"
+  >
+
+  <label for="email">email: </label>
+  <input type="text" name="email" placeholder="change the email" 
+  [(ngModel)] = "email"
+  >
+</div>
+
+<h3>Posts</h3>
+<div *ngFor="let post of posts">
+  <h1>{{post.title}}</h1>
+  <p>{{post.body}}</p>
+</div>
