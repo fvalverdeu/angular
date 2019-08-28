@@ -12,17 +12,17 @@ export class PokemonComponent {
       {
         id: 1,
         name: 'pokemon1',
-        image: ''
+        image: 'image1.svg'
       },
       {
         id: 2,
         name: 'pokemon2',
-        image: ''
+        image: 'image2.svg'
       },
       {
         id: 3,
         name: 'pokemon3',
-        image: ''
+        image: 'image3.svg'
       }
     ]
   }

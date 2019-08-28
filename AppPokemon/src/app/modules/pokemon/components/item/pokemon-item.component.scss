@@ -1,0 +1,22 @@
+.contenedor {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contenedorfoto {
+  //float:left;
+  width:210px;
+  height:180;
+  margin: 10px;
+  padding:5px;
+  background-color:#f5f7f9;
+  border-right: #a5a7aa solid 1px;
+  border-bottom: #a5a7aa solid 1px;
+  text-align:center;
+}
+
+.pokemonImage {
+  max-width: 180px;
+  max-height: 150px;
+}
