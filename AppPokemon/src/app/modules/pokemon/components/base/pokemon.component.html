@@ -1,9 +1,11 @@
 <h2>Pokemon</h2>
-<div *ngFor='let p of pokemon'>
-  <!-- <div>
-    <p>{{ p.id }}</p>
-    <p>{{ p.name }}</p>
-    <p>{{ p.image }}</p>
-  </div> -->
-  <app-pokemon-item [pokemon]='p'></app-pokemon-item>
+<div class="contenedor">
+  <div *ngFor='let p of pokemon' class="contenedorCard">
+    <app-pokemon-item [pokemon]='p'></app-pokemon-item>
+  </div>
 </div>
+<!-- <div>
+  <p>{{ p.id }}</p>
+  <p>{{ p.name }}</p>
+  <p>{{ p.image }}</p>
+  </div> -->
