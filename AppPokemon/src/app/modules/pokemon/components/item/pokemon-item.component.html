@@ -1,9 +1,7 @@
-<div class="contenedor" *ngIf='pokemon'>
-  <div class="contenedorfoto">
-    <img class="pokemonImage" src="{{ customImage(pokemon.id) }}" alt=""/>
-    <br />
-    <span>Pokemon #{{ pokemon.id }}: {{ pokemon.name }}</span>
-  </div>
+<div class="cardPokemon" *ngIf='pokemon'>
+  <img class="pokemonImage" src="{{ customImage(pokemon.id) }}" alt=""/>
+  <br />
+  <span>Pokemon #{{ pokemon.id }}: {{ pokemon.name }}</span>
 </div>
 
 
