@@ -27,7 +27,8 @@ namespace WebApplication1
                       "~/Content/site.css"));
             //bundles de angular
             bundles.Add(new ScriptBundle("~/Script/Bundles").Include(
-                "~/Bundles/main-es2015.js"));
+                "~/Bundles/*.js",
+                "~/Bundles/*.map"));
 
             bundles.Add(new ScriptBundle("~/Content/Styles").Include("~/Bundles/styles.*"));
         }

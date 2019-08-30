@@ -56,7 +56,6 @@ D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebAppli
 D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\bin\es\System.Web.WebPages.resources.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\bin\es\System.Web.WebPages.Razor.resources.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
 D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
 D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 D:\FernandoValverde\FVU\Proyectos\Angular\AngularNetMVC\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll

@@ -42,7 +42,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Proyecto Angular</h1>\n<div class=\"row\">\n<div class=\"col-md-4\">\n    <div class=\"list-group\">\n        <a class=\"list-group-item\" routerLink=\"/contacto\">Contactanos</a>\n        <a routerLink=\"/\" class=\"list-group-item\">Nosotros</a>\n      </div>\n</div>\n<div class=\"col-md-4\"></div>\n<div class=\"col-md-4\"></div>\n</div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<h1>Proyecto Angular</h1>\n<div class=\"row\">\n<div class=\"col-md-4\">\n    <div class=\"list-group\">\n        <a class=\"list-group-item\" routerLink=\"/contacto\">Contactanos app</a>\n        <a routerLink=\"/\" class=\"list-group-item\">Nosotros app</a>\n      </div>\n</div>\n<div class=\"col-md-4\"></div>\n<div class=\"col-md-4\"></div>\n</div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -63,7 +63,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: "", loadChildren: "./home/home.module#HomeModule" }
+    {
+        path: '',
+        loadChildren: './home/home.module#HomeModule'
+    }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -108,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'AppFFVV';
+        this.title = 'App-Angular8';
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -228,7 +231,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Soporte\Documents\Visual Studio 2017\Projects\DemoFFVV\AppFFVV\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\App\src\main.ts */"./src/main.ts");
 
 
 /***/ })
