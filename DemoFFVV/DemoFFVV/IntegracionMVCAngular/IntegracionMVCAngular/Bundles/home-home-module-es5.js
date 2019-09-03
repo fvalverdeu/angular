@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>contacto works!</p>\r\n"
+module.exports = "<p>contacto works!</p>\n\n\n"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<p>contacto works!</p>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Inicio</h1>\r\n<div class=\"row\">\r\n<div class=\"col-md-4\">\r\n    <div class=\"list-group\">\r\n        <a class=\"list-group-item\" routerLink=\"/Home/Contacto\">Contactanos!!</a>\r\n        <a href=\"#\" class=\"list-group-item\">Nosotros!!</a>\r\n      </div>\r\n</div>\r\n<div class=\"col-md-4\"></div>\r\n<div class=\"col-md-4\"></div>\r\n</div>\r\n"
+module.exports = "<h1>Inicio</h1>\n<div class=\"row\">\n<div class=\"col-md-4\">\n    <div class=\"list-group\">\n        <a class=\"list-group-item\" routerLink=\"/Home/Contacto\">Contactanos</a>\n        <a href=\"#\" class=\"list-group-item\">Nosotros</a>\n      </div>\n</div>\n<div class=\"col-md-4\"></div>\n<div class=\"col-md-4\"></div>\n</div>\n"
 
 /***/ }),
 
@@ -52,12 +52,20 @@ var ContactoComponent = /** @class */ (function () {
     }
     ContactoComponent.prototype.ngOnInit = function () {
     };
+    ContactoComponent.prototype.cargar = function () {
+        this.telefonos = [
+            { ciudad: "lima", telefono: "255465465", anexo: "488" },
+            { ciudad: "ica", telefono: "255465465", anexo: "488" },
+            { ciudad: "piura", telefono: "255465465", anexo: "488" },
+        ];
+    };
     ContactoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-contacto',
             template: __webpack_require__(/*! raw-loader!./contacto.component.html */ "./node_modules/raw-loader/index.js!./src/app/home/contacto/contacto.component.html"),
             styles: [__webpack_require__(/*! ./contacto.component.css */ "./src/app/home/contacto/contacto.component.css")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], ContactoComponent);
     return ContactoComponent;
 }());
@@ -79,20 +87,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _inicio_inicio_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./inicio/inicio.component */ "./src/app/home/inicio/inicio.component.ts");
-/* harmony import */ var _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contacto/contacto.component */ "./src/app/home/contacto/contacto.component.ts");
+/* harmony import */ var _home_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/inicio/inicio.component */ "./src/app/home/inicio/inicio.component.ts");
+/* harmony import */ var _home_contacto_contacto_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../home/contacto/contacto.component */ "./src/app/home/contacto/contacto.component.ts");
 
 
 
 
 
 var routes = [
-    {
-        path: 'contacto', component: _contacto_contacto_component__WEBPACK_IMPORTED_MODULE_4__["ContactoComponent"]
-    },
-    {
-        path: 'inicio', component: _inicio_inicio_component__WEBPACK_IMPORTED_MODULE_3__["InicioComponent"]
-    }
+    { path: "contacto", component: _home_contacto_contacto_component__WEBPACK_IMPORTED_MODULE_4__["ContactoComponent"] },
+    { path: "", component: _home_inicio_inicio_component__WEBPACK_IMPORTED_MODULE_3__["InicioComponent"] }
 ];
 var HomeRoutingModule = /** @class */ (function () {
     function HomeRoutingModule() {
@@ -179,14 +183,15 @@ __webpack_require__.r(__webpack_exports__);
 var InicioComponent = /** @class */ (function () {
     function InicioComponent() {
     }
-    InicioComponent.prototype.OnInit = function () {
+    InicioComponent.prototype.ngOnInit = function () {
     };
     InicioComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-inicio',
             template: __webpack_require__(/*! raw-loader!./inicio.component.html */ "./node_modules/raw-loader/index.js!./src/app/home/inicio/inicio.component.html"),
             styles: [__webpack_require__(/*! ./inicio.component.css */ "./src/app/home/inicio/inicio.component.css")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], InicioComponent);
     return InicioComponent;
 }());

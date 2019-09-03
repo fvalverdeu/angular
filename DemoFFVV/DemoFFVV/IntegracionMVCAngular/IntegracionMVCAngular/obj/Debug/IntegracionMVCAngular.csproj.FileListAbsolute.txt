@@ -181,13 +181,6 @@ D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngula
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\roslyn\vbc.rsp
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\roslyn\VBCSCompiler.exe.config
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Antlr3.Runtime.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.Agent.Intercept.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.DependencyCollector.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.PerfCounterCollector.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.ServerTelemetryChannel.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.Web.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.WindowsServer.dll
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.ApplicationInsights.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.Web.Infrastructure.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Newtonsoft.Json.dll
@@ -209,11 +202,6 @@ D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngula
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\System.Web.WebPages.Razor.xml
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Antlr3.Runtime.pdb
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Newtonsoft.Json.xml
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.ApplicationInsights.xml
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.DependencyCollector.xml
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.ServerTelemetryChannel.xml
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.WindowsServer.xml
-D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\Microsoft.AI.Web.xml
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\es\System.Web.Helpers.resources.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\es\System.Web.Mvc.resources.dll
 D:\FernandoValverde\FVU\Proyectos\Angular\DemoFFVV\DemoFFVV\IntegracionMVCAngular\IntegracionMVCAngular\bin\es\System.Web.Optimization.resources.dll
