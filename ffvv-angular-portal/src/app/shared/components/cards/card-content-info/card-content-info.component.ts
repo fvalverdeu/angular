@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-content-info.component.scss'],
 })
 export class CardContentInfoComponent {
+  cardContentInfo = 'Vas logrando'
+  cardContentGoal = '1200'
+  cardContentInfoData = 'Contenido Info'
 }

@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-header.component.scss'],
 })
 export class CardHeaderComponent {
+  cardHeaderTitle = 'Card Header Title'
 }

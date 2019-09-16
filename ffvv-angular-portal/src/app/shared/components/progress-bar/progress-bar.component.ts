@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss'],
 })
-export class CardContentComponent {
+export class ProgressBarComponent {
 }

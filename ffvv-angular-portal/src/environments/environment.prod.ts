@@ -1,4 +1,4 @@
-export const environmentFooter = {
+export const environment = {
   production: true,
   apiGraph: 'http://172.19.72.101:3000/graphql',
 };

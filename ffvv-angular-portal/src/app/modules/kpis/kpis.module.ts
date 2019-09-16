@@ -6,6 +6,9 @@ import { HomePage } from './pages';
 import { CollectAndProfitCard, CycleOfNewsCard, JoinUpCard,
   ReportCampaignCard, SalesAndOrdersCard } from './components/kpi';
 
+import { CardComponent, CardHeaderComponent, CardContentComponent,
+  CardContentInfoComponent, CardContentBodyComponent} from '../../shared/components';
+
 //import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionModule } from 'primeng/components/accordion/accordion';
 import { OrderListModule } from 'primeng/orderlist';
