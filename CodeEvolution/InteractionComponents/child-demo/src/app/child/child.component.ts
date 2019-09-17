@@ -1,32 +1,30 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent implements OnChanges {
 
-  private _loggedIn: boolean;
+  @Input() loggedIn: boolean;
   message: string;
-
-  get loggedIn(): boolean {
-    return this._loggedIn;
-  }
-
-  @Input()
-  set loggedIn(value: boolean) {
-    this._loggedIn = value;
-    if(value === true) {
-      this.message = 'Welcome back FFVV';
-    } else {
-      this.message = 'Please log in'
-    }
-  }
+  name = 'FFVV';
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
+    const loggedInValue = changes['loggedIn'];
+    if(loggedInValue.currentValue === true) {
+      this.message = 'Welcome FFVV';
+    } else  {
+      this.message = 'Please log in';
+    }
+  }
+
+  greetFFVV() {
+    alert('Hello FFVV');
   }
 
 }
