@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./collect-and-profit.card.scss']
 })
 export class CollectAndProfitCard {
-  collectAndProfitCardTitle = 'Component Cobranza y Ganancia'
+
 }

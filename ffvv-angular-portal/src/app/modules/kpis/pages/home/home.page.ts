@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { CardComponent, CardHeaderComponent, CardContentComponent,
+CardContentInfoComponent, CardContentBodyComponent } from '../../../../shared/components';
 
 @Component({
   selector: 'app-kpis-home-page',
@@ -6,26 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage {
-  Indiastate = [
-    "Rajasthan",
-    "UP",
-    "Mp",
-    "Delhi",
-    "Goa",
-    "Gurjat",
-    "Punjab"
-  ];
-  Ausstate = [
 
-    "New South Wales",
-    "Queensland",
-    "South Australia",
-    "Tasmania"
-  ];
-  Slstate = [
-    "Kandy",
-    "Galle",
-    "Kegalle",
-    "Mannar"
-  ];
 }
