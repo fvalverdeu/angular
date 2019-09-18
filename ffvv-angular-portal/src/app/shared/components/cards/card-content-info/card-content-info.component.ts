@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class CardContentInfoComponent {
   cardContentInfo = 'Vas logrando'
-  cardContentGoal = '1200'
-  cardContentInfoData = 'Contenido Info'
+  cardContentGoal = ''
+  cardContentInfoData = '$1200'
 }

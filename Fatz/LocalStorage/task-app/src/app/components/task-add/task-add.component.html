@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    Add a new Task
+  </div>
+  <div class="card-body">
+    <form (submit)="addTask()">
+      <div class="form-group">
+        <label for="title">Task title</label>
+        <input type="text" name="title" id="" class="form-control" [(ngModel)]="title">
+      </div>
+      <div class="form-group">
+        <label for="title">Task description</label>
+        <input type="text" name="description" id="" class="form-control" [(ngModel)]="description">
+      </div>
+      <input type="submit" value="Add Task" class="btn btn-primary">
+    </form>
+  </div>
+</div>
