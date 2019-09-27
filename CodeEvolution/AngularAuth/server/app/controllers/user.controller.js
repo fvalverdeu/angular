@@ -1,5 +1,7 @@
 const User = require('../models/user.model.js');
 var serverResponse = require('../models/response.model.js');
+//const jwt = require('jwt');
+const jwt = require('jsonwebtoken');
 
 // Register a new User.
 exports.create = (req, res) => {
@@ -24,7 +26,10 @@ exports.create = (req, res) => {
         if(data){
             response = new serverResponse(true, "User register succesfull.")
         }
-        res.send(response);
+        let payload = { subject: data._id }
+        let token = jwt.sign(payload, 'secretKey')
+        //res.send(response);
+        res.send({token});
     }).catch(err => {
         response = new serverResponse(false, "Error at register user.")
         res.status(500).send(response);
@@ -147,7 +152,9 @@ exports.login = (req, res) => {
         } else {
             console.log(user)
             console.log(req.body)
-            res.send(response = new serverResponse(true, "Acceso concedido."));
+            let payload = { subject: user._id }
+            let token = jwt.sign(payload, 'secretKey')
+            res.send({token});
         }
     }).catch(err => {
         if(err.kind === 'ObjectId') {

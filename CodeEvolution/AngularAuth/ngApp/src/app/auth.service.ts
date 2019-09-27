@@ -7,9 +7,15 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   private _registerUrl = "http://localhost:3000/users";
+  private _loginUrl = "http://localhost:3000/users/login";
+
   constructor(private http: HttpClient) { }
 
   registerUser(user) {
     return this.http.post<any>(this._registerUrl, user)
+  }
+
+  loginUser(user) {
+    return this.http.post<any>(this._loginUrl, user)
   }
 }
