@@ -6,7 +6,8 @@ import { HomePage } from './pages';
 import { CollectAndProfitCard, CycleOfNewsCard, JoinUpCard,
   ReportCampaignCard, SalesAndOrdersCard } from './components/kpi';
 
-import { CardComponent, CardHeaderComponent, CardContentComponent, CardContentInfoComponent} from '../../shared/components';
+import { CardComponent, CardHeaderComponent, CardContentComponent,
+  CardContentInfoComponent, CardContentBodyComponent} from '../../shared/components';
 
 //import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionModule } from 'primeng/components/accordion/accordion';
@@ -16,7 +17,8 @@ import {CardModule} from 'primeng/card';
 @NgModule({
   imports: [KpisRoutingModule, CommonModule, FormsModule, AccordionModule, OrderListModule, CardModule],
   declarations: [HomePage, CollectAndProfitCard, CycleOfNewsCard, JoinUpCard,
-    ReportCampaignCard, SalesAndOrdersCard, CardComponent, CardHeaderComponent, CardContentComponent, CardContentInfoComponent],
+    ReportCampaignCard, SalesAndOrdersCard, CardComponent, CardHeaderComponent, CardContentComponent,
+    CardContentInfoComponent, CardContentBodyComponent],
   providers: []
 })
 export class KpisModule {

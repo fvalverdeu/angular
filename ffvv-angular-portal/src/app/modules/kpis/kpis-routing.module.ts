@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './pages';
-// import { CollectAndProfitCard, CycleOfNewsCard, JoinUpCard,
-//   ReportCampaignCard, SalesAndOrdersCard } from './components/cards';
+// import { CardComponent, CardHeaderComponent, CardContentComponent,
+//   CardContentInfoComponent, CardContentBodyComponent } from '../../shared/components';
 
 const routes: Routes = [
-  {path: '',component: HomePage },
-  // {path: 'collectandprofitcard', component: CollectAndProfitCard },
+  { path: '',component: HomePage },
+
   // {path: 'cycleofnewscard', component: CycleOfNewsCard },
   // {path: 'joinupcard', component: JoinUpCard },
   // {path: 'reportcampaigncard', component: ReportCampaignCard },

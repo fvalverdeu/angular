@@ -5,7 +5,7 @@ export interface MenuFooter {
   option_type: string
   role: string
   active: string
-  sub_option: [SubOption]
+  sub_option: SubOption
 }
 
 export interface SubOption {

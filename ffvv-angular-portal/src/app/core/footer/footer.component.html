@@ -1,8 +1,13 @@
-<footer>
-  <div class="container">
-    <div class="menuFooter" *ngFor = 'let menuFooter of menuFooterList'>{{ menuFooter.description }}</div>
+<footer class="Footer">
+  <div class="container MenuFooterContainer">
+    <div class="MenuFooter" *ngFor = 'let menuFooter of menuFooterList'>
+      <h4>{{ menuFooter.description }}</h4>
+      <ul class="SubMenuFooter">
+        <li *ngFor = 'let subMenuFooter of subMenuFooterList'></li>
+      </ul>
+    </div>
   </div>
-  <div class="Footer">
+  <div class="">
     © {{ year }}, Built with&nbsp;
     <a href="https://angular.io/">Angular</a>
   </div>
