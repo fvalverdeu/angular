@@ -1,0 +1,28 @@
+
+$width: 100%;
+
+.auth-form {
+  background: #3f51b5;
+  width: $width;
+  height: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    max-width: 300px;
+    width: 100%;
+
+    mat-form-field {
+      width: $width;
+      margin-bottom: 5px;
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}
+

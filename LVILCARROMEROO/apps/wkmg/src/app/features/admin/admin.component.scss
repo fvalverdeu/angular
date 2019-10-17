@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .content {
+    padding: 10px;
+  }
+
+  mat-drawer-container {
+    flex: 1;
+
+    mat-drawer {
+      width: 200px;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "libs",
+  "projects": {
+    "wkmg": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/wkmg",
+      "sourceRoot": "apps/wkmg/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/wkmg",
+            "index": "apps/wkmg/src/index.html",
+            "main": "apps/wkmg/src/main.ts",
+            "polyfills": "apps/wkmg/src/polyfills.ts",
+            "tsConfig": "apps/wkmg/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/wkmg/src/favicon.ico",
+              "apps/wkmg/src/assets"
+            ],
+            "styles": [
+              "apps/wkmg/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/wkmg/src/environments/environment.ts",
+                  "with": "apps/wkmg/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "wkmg:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "wkmg:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wkmg:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/wkmg/src/test.ts",
+            "polyfills": "apps/wkmg/src/polyfills.ts",
+            "tsConfig": "apps/wkmg/tsconfig.spec.json",
+            "karmaConfig": "apps/wkmg/karma.conf.js",
+            "assets": [
+              "apps/wkmg/src/favicon.ico",
+              "apps/wkmg/src/assets"
+            ],
+            "styles": [
+              "apps/wkmg/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/wkmg/tsconfig.app.json",
+              "apps/wkmg/tsconfig.spec.json",
+              "apps/wkmg/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/wkmg/e2e/protractor.conf.js",
+            "devServerTarget": "wkmg:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wkmg:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "wkmg-commons": {
+      "projectType": "library",
+      "root": "libs/wkmg-commons",
+      "sourceRoot": "libs/wkmg-commons/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/wkmg-commons/tsconfig.lib.json",
+            "project": "libs/wkmg-commons/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/wkmg-commons/src/test.ts",
+            "tsConfig": "libs/wkmg-commons/tsconfig.spec.json",
+            "karmaConfig": "libs/wkmg-commons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/wkmg-commons/tsconfig.lib.json",
+              "libs/wkmg-commons/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+
+  },
+  "defaultProject": "wkmg"
+}

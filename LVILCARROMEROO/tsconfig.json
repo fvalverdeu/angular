@@ -1,0 +1,46 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@wkmg/commons": [
+        "libs/wkmg-commons/src/public-api"
+      ],
+      "@wkmg/commons/services": [
+        "libs/wkmg-commons/src/lib/services"
+      ],
+      "@wkmg/commons/guards": [
+        "libs/wkmg-commons/src/lib/guards"
+      ],
+      "@wkmg/commons/classes": [
+        "libs/wkmg-commons/src/lib/classes"
+      ],
+      "@wkmg/commons/http": [
+        "libs/wkmg-commons/src/lib/http"
+      ],
+      "@wkmg/commons/interceptors": [
+        "libs/wkmg-commons/src/lib/interceptors"
+      ],
+      "@wkmg/commons/utils": [
+        "libs/wkmg-commons/src/lib/utils"
+      ]
+    }
+  }
+}

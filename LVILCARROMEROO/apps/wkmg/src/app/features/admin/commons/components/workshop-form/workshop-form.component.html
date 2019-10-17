@@ -1,0 +1,66 @@
+<form [formGroup]="form" (ngSubmit)="save()" >
+  <mat-form-field appearance="outline">
+    <mat-label>Fecha</mat-label>
+    <input formControlName="date" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="dateField.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Inicio</mat-label>
+    <input type="time" formControlName="start" matInput>
+    <mat-error *ngIf="startField.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Fin</mat-label>
+    <input type="time" formControlName="end" matInput>
+    <mat-error *ngIf="endField.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Instructor</mat-label>
+    <mat-select formControlName="instructor">
+      <mat-option *ngFor="let instuctor of data.instructors" [value]="instuctor._id">
+        {{ instuctor.fullName }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="instructorField.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input formControlName="name" matInput>
+    <mat-error *ngIf="nameField.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descripción</mat-label>
+    <textarea formControlName="description" matInput></textarea>
+    <mat-error *ngIf="descriptionField.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <input matInput hidden>
+    <mat-checkbox color="primary" formControlName="publish">Publicar</mat-checkbox>
+  </mat-form-field>
+
+  <div>
+  </div>
+
+  <button type="button" mat-button (click)="cancel()">Cancelar</button>
+  <button type="submit" [disabled]="form.invalid" mat-button>Guardar</button>
+</form>

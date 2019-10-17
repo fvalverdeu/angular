@@ -1,0 +1,41 @@
+<div class="auth-form">
+  <form [formGroup]="authForm" (ngSubmit)="signUp()" >
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Registro</mat-card-title>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Correo</mat-label>
+          <input formControlName="email" matInput placeholder="Ingrese un correo">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error *ngIf="emailField.hasError('required')" >
+            Este campo es requerido
+          </mat-error>
+          <mat-error *ngIf="emailField.hasError('email')" >
+            Este campo debe ser un email valido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Outline form field</mat-label>
+          <input [type]="showPassword ? 'text' : 'password'"
+                 formControlName="password" matInput placeholder="Placeholder">
+
+          <button type="button" mat-icon-button matSuffix
+                  (click)="showPassword = !showPassword">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+
+          <mat-error *ngIf="passwordField.hasError('passwordStrong')" >
+            {{ passwordField.errors.passwordStrong }}
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" mat-button [routerLink]="['../sign-in']">Ingresar</button>
+        <button type="submit" [disabled]="authForm.invalid" mat-button>Registarse</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Custom Toolbar</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" [opened]="true" >
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let option of menuOptions"
+          [routerLink]="option.path">
+          <mat-icon mat-list-icon>{{ option.icon }}</mat-icon>
+          <h4 mat-line>{{ option.title }}</h4>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-drawer-container>
+</div>
+

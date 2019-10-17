@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="save()" >
+  <mat-form-field appearance="outline">
+    <mat-label>Titulo</mat-label>
+    <input formControlName="title" matInput>
+    <mat-error *ngIf="title.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Nombres</mat-label>
+    <input formControlName="names" matInput>
+    <mat-error *ngIf="names.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Apellidos</mat-label>
+    <input formControlName="lastNames" matInput>
+    <mat-error *ngIf="lastNames.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Correo</mat-label>
+    <input formControlName="mail" matInput>
+    <mat-error *ngIf="mail.hasError('required')" >
+      Este campo es requerido
+    </mat-error>
+    <mat-error *ngIf="mail.hasError('email')" >
+      Este campo debe ser un correo valido
+    </mat-error>
+  </mat-form-field>
+
+  <button type="button" mat-button (click)="cancel()">Cancelar</button>
+  <button type="submit" [disabled]="form.invalid" mat-button>Ingresar</button>
+</form>
