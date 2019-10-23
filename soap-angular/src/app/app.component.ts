@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   cols: any[];
 
   constructor(private carService: CarService, private soap: NgxSoapService) {
-    this.soap.createClient('assets/calculator.wsdl')
+    this.soap.createClient('assets/calculator/calculator.wsdl')
       .then(client => {
         console.log('Client', client);
         this.client = client;
