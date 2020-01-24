@@ -1,0 +1,33 @@
+<ui-card typeCard="CardDetail">
+  <div class="capital whiteBack">
+    <div class="headerInfo">
+      <ui-title title="Capitalización" size="lg-m" color="#000000"></ui-title>
+      <ui-title title="Total: {{ saleCapitalize.total }}" size="xmd" color="#B9007E"></ui-title>
+    </div>
+    <ul class="listContent final">
+      <li>
+        <ui-text text="Ingresos" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ saleCapitalize.incomes }}" size="md-d"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Reingresos" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ saleCapitalize.reentries }}" size="md-d"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Egresos" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ saleCapitalize.expenses }}" size="md-d"></ui-title>
+      </li>
+    </ul>
+    <div class="tip">
+      <div>
+          ☝️
+      </div>
+      <div>
+        <p class="grayText">
+          Recuerda que tu capitalización se calcula en base a: <br class="hide-mobile"/>
+          Ingresos + Reingresos - Egresos
+        </p>
+      </div>
+    </div>
+  </div>
+</ui-card>

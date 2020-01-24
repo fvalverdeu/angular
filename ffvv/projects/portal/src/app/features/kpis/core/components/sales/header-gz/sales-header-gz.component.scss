@@ -1,0 +1,36 @@
+/*{
+    outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.container{
+    display: flex;
+    justify-content: space-between;
+ 
+    .marginLeft{
+    padding-left: 15px;
+    }
+    .marginRight{
+        padding-right: 15px;
+    }
+    .table::-webkit-scrollbar {
+        width: 8px; /* Tamaño del scroll en vertical */
+        height: 8px; /* Tamaño del scroll en horizontal */
+        display: none; /* Ocultar scroll */
+    }
+}
+
+@media (max-width:650px){
+    .container{
+        display: block;
+     
+        .marginLeft{
+            padding-left: 0px;
+        }
+        .marginBot{
+            margin-bottom: 24px;
+        }
+        .marginRight{
+            padding-right: 0px;
+        }
+    }
+    
+}

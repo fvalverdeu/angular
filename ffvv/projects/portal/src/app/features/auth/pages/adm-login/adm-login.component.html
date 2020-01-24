@@ -1,0 +1,38 @@
+<div class="ui-g container ui-g-nopad">
+  <div class="ui-g-7 logo-login">
+    <img src="../../../../../../assets/images/illustration.jpg" alt="">
+  </div>
+  <div class="ui-g-5 ui-sm-12 form-login">
+    <img src="../../../../../../assets/logo/logo.png" alt="">
+    <br />
+    <span>belcorp.biz</span>
+
+    <form class="form" [formGroup]="presenter.authFormAdm" (ngSubmit)="presenter.signInAdm()">
+
+      <input formControlName="country" name="country" type="text" class="form-control rounded-0" text="" maxlength="2"
+      required placeholder="País" autofocus>
+
+      <!-- <div *ngIf="presenter.countryField.errors && presenter.countryField.dirty">
+        <p *ngIf="presenter.countryField.hasError('required')">El campo es requerido.</p>
+      </div> -->
+
+      <input formControlName="region" name="region" type="text" class="form-control rounded-0" text="" maxlength="2"
+      required placeholder="Región" autofocus>
+
+      <input formControlName="zone" name="zone" type="text" class="form-control rounded-0" text="" maxlength="4"
+      required placeholder="Zona" autofocus>
+
+      <input formControlName="section" name="section" type="text" class="form-control rounded-0" text="" maxlength="1"
+        placeholder="Sección" autofocus>
+
+      <input [type]="showPassword ? 'text' : 'password'" formControlName="password" name="password" text="" required
+        placeholder="Contraseña">
+      <button type="submit" [disabled]="presenter.authFormAdm.invalid" class="btn">Iniciar sesión</button>
+      <br />
+      <hr>
+      <p class="footer-login">
+        © Copyright Belcorp {{ year }}. All rights reserved
+      </p>
+    </form>
+  </div>
+</div>

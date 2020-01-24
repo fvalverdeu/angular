@@ -1,0 +1,176 @@
+<ng-template [ngIf]="sale" [ngIfElse]="billing">
+  <ng-template [ngIf]="roadBright" [ngIfElse]="noRoadBright">
+    <ui-card class="catalog" typeCard="CardDetail">
+      <div class="sellCard whiteBack ">
+        <div class="sectionInfo">
+          <div class="orangeLightBack adviceBig">
+            <ui-title title="Venta Catálogo" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.saleCatalog | number: '.2-2' }}" size="lg-d" color="#B9007E"></ui-title>
+          </div>
+          <ul class="meta">
+            <li>
+              <ui-text text="Meta {{ saleCatalog.previousCampaign }}" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ currencySymbol }} {{ saleCatalog.saleGoal }}" size="md-d" color="#2C2654"></ui-title>
+            </li>
+            <li>
+              <ui-text text="Cumplimiento" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ saleCatalog.saleFulfillment | number: '.1-1' }}%" size="md-d" color="#2C2654"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="infoFacturacion">
+          <ul class="listContent pedidosValor">
+            <li>
+              <ui-title title="Pedidos" size="lg-m"></ui-title>
+              <ui-title title="{{ saleCatalog.orders }} facturados" size="lg-m" color="#B9007E"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <ul class="listContent promedy">
+          <li class="mb-0">
+            <ui-title title="Promedio por pedido" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.orderAverage | number: '.2-2' }}" size="lg-m" color="#B9007E"></ui-title>
+          </li>
+        </ul>
+      </div>
+    </ui-card>
+  </ng-template>
+
+  <ng-template #noRoadBright>
+    <ui-card typeCard="CardDetail">
+      <div class="sellCard whiteBack ">
+        <ul class="listContent">
+          <li>
+            <ui-title title="Venta Catálogo" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.saleCatalog | number: '.2-2' }}" size="lg-d" color="#B9007E"></ui-title>
+          </li>
+        </ul>
+        <hr />
+        <div class="sectionInfo">
+          <div class="orangeLightBack adviceBig">
+            <ui-title title="Pedidos" size="lg-m"></ui-title>
+            <ui-title title="{{ saleCatalog.orders }} facturados" size="lg-m" color="#B9007E"></ui-title>
+
+          </div>
+          <ul class="meta">
+            <li>
+              <ui-text text="Meta {{ saleCatalog.previousCampaign }}" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ saleCatalog.ordersGoal }} pedidos" size="md-d"></ui-title>
+            </li>
+            <li>
+              <ui-text text="Cumplimiento" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ saleCatalog.ordersFulfillment | number: '.1-1' }}%" size="md-d"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <ul class="listContent promedy">
+          <li class="mb-0">
+            <ui-title title="Promedio por pedido" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.orderAverage | number: '.2-2' }}" size="lg-m" color="#B9007E"></ui-title>
+          </li>
+        </ul>
+      </div>
+    </ui-card>
+  </ng-template>
+</ng-template>
+
+<ng-template #billing>
+  <ng-template [ngIf]="roadBright" [ngIfElse]="noRoadBright">
+    <ui-card typeCard="CardDetail">
+      <div class="sellCard whiteBack ">
+        <div class="sectionInfo">
+          <div class="orangeLightBack adviceBig">
+            <ui-title title="Venta Catálogo" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.saleCatalog | number: '.2-2' }}" size="lg-d" color="#B9007E"></ui-title>
+          </div>
+          <ul class="meta">
+            <li>
+              <ui-text text="Meta {{ saleCatalog.currentCampaign }}" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ currencySymbol }} {{ saleCatalog.saleGoal }}" size="md-d"></ui-title>
+            </li>
+            <li>
+              <ui-text text="Cumplimiento" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ saleCatalog.saleFulfillment | number: '.1-1' }}%" size="md-d" color="#38BE62"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="infoFacturacion">
+          <ul class="listContent pedidosValor">
+            <li>
+              <ui-title title="Pedidos" size="lg-m"></ui-title>
+              <ui-title title="{{ saleCatalog.orders }} facturados" size="lg-d" color="#B9007E"></ui-title>
+            </li>
+            <li>
+              <ui-text text="Pedidos de Alto Valor (PAV)" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{ saleCatalog.highValueOrders }} pedidos" size="md-d"></ui-title>
+            </li>
+            <li>
+                <ui-text text="Pedidos de Bajo Valor (PBV)" size="md-d" color="#000000"></ui-text>
+                <ui-title title="{{ saleCatalog.lowValueOrders }} pedidos" size="md-d"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <ul class="listContent promedy">
+          <li class="mb-0">
+            <ui-title title="Promedio por pedido" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.orderAverage | number: '.2-2' }}" size="lg-m"  color="#B9007E"></ui-title>
+          </li>
+        </ul>
+      </div>
+    </ui-card>
+  </ng-template>
+
+  <ng-template #noRoadBright>
+    <ui-card typeCard="CardDetail">
+      <div class="sellCard whiteBack ">
+        <ul class="listContent">
+          <li>
+            <ui-title title="Venta Catálogo" size="lg-m"></ui-title>
+            <ui-title title="{{ currencySymbol }} {{ saleCatalog.saleCatalog | number: '.2-2' }}" size="lg-d" color="#B9007E"></ui-title>
+          </li>
+        </ul>
+        <hr />
+        <div class="sectionInfo">
+          <div class="orangeLightBack adviceBig">
+            <ui-title title="Pedidos" size="lg-m"></ui-title>
+            <ui-title title="{{ saleCatalog.orders }} facturados" size="lg-m" color="#B9007E"></ui-title>
+          </div>
+          <ul class="meta">
+            <li>
+              <ui-text text="Meta {{ saleCatalog.currentCampaign }}" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ saleCatalog.ordersGoal }} pedidos" size="md-d"></ui-title>
+            </li>
+            <li>
+              <ui-text text="Cumplimiento" size="md-d" color="#454549"></ui-text>
+              <ui-title title="{{ saleCatalog.ordersFulfillment | number: '.1-1' }}%" size="md-d"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <div class="infoFacturacion">
+          <ul class="listContent pedidosValor">
+              <li>
+                  <ui-text text="Pedidos de Alto Valor (PAV)" size="md-d" color="#000000"></ui-text>
+                  <ui-title title="{{ saleCatalog.highValueOrders }} pedidos" size="md-d"></ui-title>
+                </li>
+                <li>
+                    <ui-text text="Pedidos de Bajo Valor (PBV)" size="md-d" color="#000000"></ui-text>
+                    <ui-title title="{{ saleCatalog.lowValueOrders }} pedidos" size="md-d"></ui-title>
+                </li>
+          </ul>
+        </div>
+        <hr />
+        <ul class="listContent promedy">
+            <li class="mb-0">
+                <ui-title title="Promedio por pedido" size="lg-m"></ui-title>
+                <ui-title title="{{ currencySymbol }} {{ saleCatalog.orderAverage | number: '.2-2' }}" size="lg-m"  color="#B9007E"></ui-title>
+              </li>
+        </ul>
+      </div>
+    </ui-card>
+  </ng-template>
+</ng-template>

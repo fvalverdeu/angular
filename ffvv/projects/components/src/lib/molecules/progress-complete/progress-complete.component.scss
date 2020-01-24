@@ -1,0 +1,21 @@
+.progress-bar{
+    margin-bottom: 20px;
+  }
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+    color: #38be62;
+  }
+:host{
+    ::ng-deep .ui-progressbar{
+        background-color: #f8e5f2;
+        border-radius: 4px;
+        height: 4px;
+        .ui-progressbar-value{
+           background-color: #38be62;
+       }
+    } 
+}

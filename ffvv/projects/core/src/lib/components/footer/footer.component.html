@@ -1,0 +1,46 @@
+<footer class="Footer ui-g-12">
+  <div class="Container ">
+    <div class="menuFooter ui-g-4" *ngFor="let item of optionsFooter">
+      <h4 class="title">{{ item.description }}</h4>
+      <ul class="SubMenuFooter">
+        <li *ngFor="let subItem of item.sub_option">
+          <a href="{{ subItem.url }}">{{ subItem.description }}</a>
+          <i *ngIf="compareTexts(subItem.description, 'facebook')" class="icon-facebook2 sf-text-fb sf-icon-18 ml-1"></i>
+          <i *ngIf="compareTexts(subItem.description, 'youtube')" class="icon-youtube sf-text-yt sf-icon-18 ml-1"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="CopyrightFooter ui-g-12">
+      <p>
+        © Copyright Belcorp {{ year }}. All rigths reserved.
+      </p>
+    </div>
+  </div>
+
+  <div class="FooterMobile">
+    <img class="logoBelcorp" src="../../../../../../assets/logo/logo-belcorp.svg" alt="">
+    <ul class="listFooter">
+      <li *ngFor="let item of optionsFooter">
+        <span>{{ item.description }}</span>
+        <i class="icon-plus3" (click)="toggleFooter()"></i>
+        <!--<img src="images/a-icon-add.svg" alt="">-->
+        <div class="optionFooter" *ngIf="showFooter">
+          <ul>
+            <li *ngFor="let subItem of item.sub_option">
+              <a href="{{ subItem.url }}">{{ subItem.description }}</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <div class="social">
+      <i class="icon-facebook2 sf-text-fb sf-icon-18 ml-2"></i>
+      <i class="icon-youtube sf-text-yt sf-icon-18 ml-2"></i>
+      <!--<img class="Facebook" src="images/Bitmap.svg" alt="">
+      <img class="Youtube" src="images/youtube.svg" alt="">-->
+    </div>
+    <div class="CopyrightFooter">
+      <p>© Copyright Belcorp {{ year }}. All rigths reserved.</p>
+    </div>
+  </div>
+</footer>

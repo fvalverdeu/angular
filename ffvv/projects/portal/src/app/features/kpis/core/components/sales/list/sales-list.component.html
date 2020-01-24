@@ -1,0 +1,94 @@
+<form class="" [formGroup]="filterForm" (ngSubmit)="filter($event, 2)">
+  <div class="ui-g-3 filter-sales ui-g-nopad">
+    <ui-card typeCard="CardDetail">
+      <ui-filter>
+        <div class="filter">
+          <h4>Segmentos</h4>
+          <ul>
+            <li formArrayName="segments" *ngFor="let control of segments.controls; let i = index">
+              <input type="checkbox" id="chx_{{i}}" [formControlName]="i" (change)="filter($event, 1)">
+              <label for="chx_{{i}}"> <span></span>{{segmentsData[i].name + ' (' + segmentsData[i].count + ')'}}</label>
+            </li>
+          </ul>
+        </div>
+      </ui-filter>
+    </ui-card>
+  </div>
+
+  <div class="ui-g-9 ui-sm-12 ui-g-nopad list">
+    <div class="searchFind">
+      <div class="infoConsultant">
+        <div class="number-consultant">
+          <ui-title title="{{ totalRecords }} Consultoras en total" size="xmd" color="#454549"></ui-title>
+          <ui-text text="Mostrando {{currentPage}} - {{totalPages}} de {{totalRecords}}" size="md" color="#909094">
+          </ui-text>
+        </div>
+        <div class="filterMobile">
+          <img src="/assets/icons/a-icon-filter.svg" alt="" />
+          <ui-title title="Filtros" size="md" color="#000000" class="ml-1"></ui-title>
+        </div>
+      </div>
+      <div class="searching">
+        <input formControlName="nameSearch" class="searchInput whiteBack" type="text" placeholder="Buscar por nombre" />
+        <i class="icon-search4" (click)="filter($event, 2)"></i>
+      </div>
+    </div>
+    <div class="check-labels">
+        <div class="label">
+            <span>Nuevas</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="#fff">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1913 0.310329C12.605 -0.103443 13.2759 -0.103443 13.6897 0.310329C14.1034 0.724101 14.1034 1.39496 13.6897 1.80873L8.4984 7L13.6897 12.1913C14.1034 12.605 14.1034 13.2759 13.6897 13.6897C13.2759 14.1034 12.605 14.1034 12.1913 13.6897L7 8.4984L1.80873 13.6897C1.39496 14.1034 0.724101 14.1034 0.310329 13.6897C-0.103443 13.2759 -0.103443 12.605 0.310329 12.1913L5.5016 7L0.310329 1.80873C-0.103443 1.39496 -0.103443 0.724101 0.310329 0.310329C0.724101 -0.103443 1.39496 -0.103443 1.80873 0.310329L7 5.5016L12.1913 0.310329Z" fill="white"/>
+            </svg>
+          </div>
+        <div class="clean-text ml-2"><span>Limpiar Filtros</span> </div>
+    </div>
+    <div>
+      <div *ngFor="let item of filteredConsultants" class="list-consultant">
+        <ui-item>
+          <div class="title" itemTitle>
+            <div class="textTitle">
+              <div class="circlePoint pinkBack"></div>
+              <ui-title title="{{ item.segment_description}}" size="xsm" color="#f33162">
+              </ui-title>
+            </div>
+            <ui-text text="{{ item.name }}" size="md-d" color="#454549"></ui-text>
+          </div>
+
+          <div itemDescription class="list-consultant ui-g-12">
+            <ul class="ui-g-4 ui-sm-12">
+              <li>
+                <ui-text text="Código:" size="sm-d" color="gray" class="mr-1"></ui-text>
+                <ui-text text="{{ item.code }}" size="sm-d" color="black"></ui-text>
+              </li>
+              <li>
+                <ui-text text="Celular:" size="sm-d" color="gray" class="mr-1"></ui-text>
+                <ui-text text="{{ item.phone }}" size="sm-d" color="black"></ui-text>
+              </li>
+            </ul>
+            <ul class="ui-g-4 ui-sm-12">
+              <li>
+                <ui-text text="Deuda Pendiente:" size="sm-d" color="gray" class="mr-1"></ui-text>
+                <ui-text text="{{currency}} {{ item.pending_debt | number: '.2-2' }}" size="sm-d" color="black"></ui-text>
+              </li>
+              <li>
+                <ui-text text="Pedido en Somos Belcorp:" size="sm-d" color="gray" class="mr-1"></ui-text>
+                <ui-text text="{{currency}} {{ item.orderAmount| number: '.2-2' }}" size="sm-d" color="black"></ui-text>
+              </li>
+            </ul>
+            <ul class="ui-g-4 ui-sm-12" *ngIf="isSale">
+              <li>
+                <ui-text text="Venta acumulada del periodo:" size="sm-d" color="gray" class="mr-1"></ui-text>
+                <ui-text text="{{currency}} {{ item.sale_period | number: '.2-2' }}" size="sm-d" color="black"></ui-text>
+              </li>
+              <li>
+                <ui-text text="Constancia:" size="sm-d" color="gray" class="mr-1"></ui-text>
+                <ui-text text="{{ item.constancy }}" size="sm-d" color="black"></ui-text>
+              </li>
+            </ul>
+          </div>
+        </ui-item>
+      </div>
+      <p-paginator #p *ngIf="totalRecords > 0" [rows]="rows" [totalRecords]="totalRecords" [pageLinkSize]="pageLinkSize" (onPageChange)="paginate($event)" class="pagination ui-g"></p-paginator>
+    </div>
+  </div>
+</form>

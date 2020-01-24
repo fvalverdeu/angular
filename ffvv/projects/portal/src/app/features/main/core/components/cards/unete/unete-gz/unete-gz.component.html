@@ -1,0 +1,69 @@
+<ng-template [ngIf]="isGZ" [ngIfElse]="isSE">
+  <ui-card>
+    <ui-card-header>
+      <img
+        src="assets/icons/a-icon-add-consultant.svg"
+        alt=""
+        iconLeft
+        class="icon-card"
+      />
+      <ui-title [title]="title" size="xmd" color="color"></ui-title>
+      <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+    </ui-card-header>
+    <ng-template [ngIf]="data" [ngIfElse]="loading">
+      <div class="info-card">
+        <ui-info>
+          <ui-text
+            text="En {{ campaignPrev }} lograste"
+            size="md-d"
+            up
+          ></ui-text>
+          <ui-title
+            title="{{ dataUnete.conversion | number: '.1-1' }}% de Conversión"
+            size="lg-ex"
+            down
+          ></ui-title>
+        </ui-info>
+      </div>
+      <ui-text
+        text="En {{ campaignCurr }} tienes"
+        size="md-d"
+        up
+        class=""
+      ></ui-text>
+      <div class="ui-g ui-g-nopad table-unete">
+        <p-table [value]="cars" class="ui-g-6 ui-g-nopad">
+          <ng-template pTemplate="body" let-car>
+            <tr>
+              <td>EN EVALUACIÓN</td>
+              <td>{{ dataUnete.in_evaluation }}</td>
+            </tr>
+            <tr>
+              <td>PRE-APROBADA</td>
+              <td>{{ dataUnete.preapproved }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <p-table [value]="cars" class="ui-g-6 ui-g-nopad">
+          <ng-template pTemplate="body" let-car>
+            <tr>
+              <td>ING. ANTICIPADOS</td>
+              <td>{{ dataUnete.anticipated_income }}</td>
+            </tr>
+            <tr>
+              <td>DÍAS EN ESPERA</td>
+              <td>{{ dataUnete.days_on_hold }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+
+      <!--Únete (todos)-->
+    </ng-template>
+    <ng-template #loading>Loading...</ng-template>
+  </ui-card>
+</ng-template>
+
+<ng-template #isSE>
+  <app-unete-se [sectionCode]="sectionSel"></app-unete-se>
+</ng-template>

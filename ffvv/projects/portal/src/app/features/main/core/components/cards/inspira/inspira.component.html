@@ -1,0 +1,27 @@
+<ui-card>
+  <ui-card-header>
+    <img src="assets/icons/a-icon-inspira.svg" alt="" iconLeft class="icon-card" />
+    <ui-title [title]="title" size="xmd" color="color"></ui-title>
+    <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+  </ui-card-header>
+  <ng-template [ngIf]="data" [ngIfElse]="loading">
+    <div class="info-card">
+      <ui-info>
+        <ui-text text="En C08 tu puesto es" size="md-d" up></ui-text>
+        <ui-title
+          title="#16 en carrera al Viaje Inspira" size="lg-ex" down
+        ></ui-title>
+      </ui-info>
+    </div>
+    <div class="info-card">
+        <ui-text text="Tu destino es" size="md-d" up></ui-text>
+      <div class="travel-place">
+        <ui-title title="Panamá" size="lg-ex" down class="mr-1"></ui-title>
+        <span>🏖️</span>
+      </div>
+    </div>
+    <!--Inspira (todos)-->
+  </ng-template>
+  <ng-template #loading>Loading...</ng-template>
+</ui-card>
+

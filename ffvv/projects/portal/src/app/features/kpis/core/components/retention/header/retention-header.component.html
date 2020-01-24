@@ -1,0 +1,295 @@
+<ng-template [ngIf]="isSE" [ngIfElse]="isGZ">
+
+  <ng-template [ngIf]="data" [ngIfElse]="loading">
+    <h4 class="mb-2">
+      <ui-title title="En {{ currentUI.campaign }} {{ isSale ? 'puedes lograr' : 'vas logrando' }}" color="#b9007e"></ui-title>
+    </h4>
+
+    <ng-template [ngIf]="isSale" [ngIfElse]="Billing">
+        <div class="contain-cards">
+            <div class="whiteBack leftSide">
+              <div class="advice bodyBack">
+                👩
+                <ui-title title="{{ previousUI.i5d5 }}  Consultoras 6D6" size="lg-ex" class="ml-1"> </ui-title>
+              </div>
+              <p class="disclaimer colorTextMag">
+                💡
+                <ui-text text="Gana hasta S/120 por cada 6D6 que logres retener" size="sm-m" color="#B9007E"></ui-text>
+              </p>
+            </div>
+            <div class="whiteBack rightSide">
+                  <ui-title title="Máxima retención posible" size="lg-m" color="#000000"></ui-title>
+                  <ul class="listaConsultant">
+                    <li>
+                        <ui-title title="5D5" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                      <div class="consultant">
+                          <ui-title title="{{ previousUI.i4d4 }}" size="xmd-m"></ui-title>
+                          <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                      </div>
+                    </li>
+                    <hr class="divided" />
+                    <li>
+                        <ui-title title="4D4" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                        <div class="consultant">
+                            <ui-title title="{{ previousUI.i3d3 }}" size="xmd-m"></ui-title>
+                            <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                        </div>
+                      </li>
+                    <hr class="divided" />
+                    <li>
+                        <ui-title title="3D3" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                      <div class="consultant">
+                          <ui-title title="{{ previousUI.i2d2 }}" size="xmd-m"></ui-title>
+                          <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                      </div>
+                    </li>
+                    <hr class="divided" />
+                    <li>
+                      <ui-title title="2D2" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                      <div class="consultant">
+                        <ui-title title="{{ previousUI.i1d1 }}" size="xmd-m"></ui-title>
+                        <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+    </ng-template>
+
+    <ng-template #Billing>
+          <div class="contain-cards">
+            <div class=" leftSide">
+              <div class="advice bodyBack">
+                👩
+                <ui-title title=" {{currentUI.i6d6}} de {{ previousUI.i5d5 }} Consultoras 6D6" size="lg-ex" class="ml-1"> </ui-title>
+              </div>
+              <p class="disclaimer colorTextMag">
+                💡
+                <ui-text text="Gana hasta S/120 por cada 6D6 que logres retener" size="sm-m" color="#B9007E"></ui-text>
+              </p>
+            </div>
+            <div class="rightSide">
+              <ui-title title="Retención lograda" size="lg-m" color="#000000"></ui-title>
+              <ul class="listaConsultant">
+                <li>
+                    <ui-title title="5D5" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                    <div class="consultant">
+                        <ui-title title="{{currentUI.i5d5}} de {{ previousUI.i4d4 }} " size="xmd-m"></ui-title>
+                        <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                    </div>
+                </li>
+                <hr class="divided" />
+                <li>
+                    <ui-title title="4D4" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                    <div class="consultant">
+                        <ui-title title="{{currentUI.i4d4}} de {{ previousUI.i3d3 }}" size="xmd-m"></ui-title>
+                        <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                    </div>
+                </li>
+                <hr class="divided" />
+                <li>
+                    <ui-title title="3D3" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                    <div class="consultant">
+                        <ui-title title="{{currentUI.i3d3}} de {{ previousUI.i2d2 }}" size="xmd-m"></ui-title>
+                        <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                    </div>
+                </li>
+                <hr class="divided" />
+                <li>
+                    <ui-title title="2D2" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                    <div class="consultant">
+                        <ui-title title="{{currentUI.i2d2}} de {{ previousUI.i1d1 }}" size="xmd-m"></ui-title>
+                        <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                    </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </ng-template>
+
+</ng-template>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
+
+</ng-template>
+
+<ng-template #isGZ>
+
+  <ng-template [ngIf]="data" [ngIfElse]="loading">
+
+    <ng-template [ngIf]="isSale" [ngIfElse]="Billing">
+      <!------------------CARD--------------->
+      <div class="ui-g-4 ui-g-nopad ui-sm-12 marginRight">
+        <div class="ciclo-resume ui-g-12 ui-g-nopad ">
+          <div class="advice-retention">
+            <div class="advice-number">
+              <ui-title title=" {{ previousUI.i5d5 }} Consultoras 6D6" size="lg" ></ui-title>
+            </div>
+            <p class="tip">Gana hasta S/120 por cada 6D6 que logres retener</p>
+          </div>
+          <div class="number-retention ui-g-12 ui-g-nopad">
+            <ui-title title="Máxima retención posible" size="md-d" color="#000" class="title-retention"></ui-title>
+            <ul class="ui-g-12 ui-g-nopad ui-sm-6">
+              <li class="ui-g-6 ui-g-nopad">
+                <ui-title title="5D5" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ previousUI.i4d4 }}" size="xmd-m"></ui-title>
+                  <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                </div>
+              </li>
+              <li class="ui-g-6 ui-g-nopad border">
+                <ui-title title="4D4" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ previousUI.i3d3 }}" size="xmd-m"></ui-title>
+                  <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                </div> 
+              </li>
+            </ul>
+            <ul class="ui-g-12 ui-g-nopad ui-sm-6">
+              <li class="ui-g-6 ui-g-nopad">
+                <ui-title title="3D3" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ previousUI.i2d2 }}" size="xmd-m"></ui-title>
+                  <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                </div>
+              </li>
+              <li class="ui-g-6 ui-g-nopad">
+                <ui-title title="2D2" size="xmd-x" color="#39bbb1" class="spacing"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ previousUI.i1d1 }}" size="xmd-m"></ui-title>
+                  <ui-title title="Consultoras" size="xmd-m" class="hide-mobile ml-1 "></ui-title>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-------TABLA------------------------>
+      <div class="ui-g-8 ui-g-nopad ui-sm-12 marginLeft">
+        <div class="tabla-ciclo">
+          <ui-title title="Consolidado por secciones" size="lg" color="#000"></ui-title>
+          <div class="tabla-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>SECCIONES</th>
+                  <th style="max-width: 360px;">POSIBLES 6D6</th>
+                  <th>POSIBLES 5D5</th>
+                  <th>POSIBLES 4D4</th>
+                  <th>POSIBLES 3D3</th>
+                  <th>POSIBLES 2D2</th>
+                </tr>
+              </thead>
+        
+              <tbody *ngFor="let SE of previousSEUI">
+                <tr>
+                  <td> {{ SE.section }} </td>
+                  <td> {{ SE.i5d5 }} </td>
+                  <td> {{ SE.i4d4 }} </td>
+                  <td> {{ SE.i3d3 }}  </td>
+                  <td> {{ SE.i2d2 }} </td>
+                  <td> {{ SE.i1d1 }} </td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #Billing>
+      <!------------------CARD--------------->
+      <div class="ui-g-4 ui-g-nopad ui-sm-12 marginRight">
+        <div class="ciclo-resume ui-g-12 ui-g-nopad">
+          <div class="advice-retention">
+            <div class="advice-number">
+              <ui-title title=" {{currentUI.i6d6}} de {{ previousUI.i5d5 }} Consultoras 6D6" size="lg-ex" ></ui-title>
+            </div>
+            <p class="tip">Gana hasta S/120 por cada 6D6 que logres retener</p>
+          </div>
+          <div class="number-retention ui-g-12 ui-g-nopad">
+            <ui-title title="Máxima retención posible" size="md-d" color="#000" class="title-retention ui-g-12 ui-g-nopad"></ui-title>
+            <ul class="ui-g-12 ui-g-nopad ui-sm-6 border">
+              <li class="ui-g-6 ui-g-nopad">
+                <ui-title title="5D5" size="xmd-x" color="#39bbb1" class="space"> </ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ currentUI.i5d5 }} de {{ previousUI.i4d4 }}" size="xmd-m"></ui-title>
+                </div>
+              </li>
+              <li class="ui-g-6 ui-g-nopad ">
+                <ui-title title="4D4" size="xmd-x" color="#39bbb1" class="space"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ currentUI.i4d4 }} de {{ previousUI.i3d3 }}" size="xmd-m"> </ui-title>
+                </div>
+              </li>
+            </ul>
+            <ul class="ui-g-12 ui-g-nopad ui-sm-6">
+              <li class="ui-g-6 ui-g-nopad">
+                <ui-title title="3D3" size="xmd-x" color="#39bbb1" class="space"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ currentUI.i3d3 }} de {{ previousUI.i2d2 }}" size="xmd-m"></ui-title>
+                </div>
+              </li>
+
+              <li class="ui-g-6 ui-g-nopad">
+                <ui-title title="2D2" size="xmd-x" color="#39bbb1" class="space"></ui-title>
+                <div class="consultant">
+                  <ui-title title="{{ currentUI.i2d2 }} de {{ previousUI.i1d1 }} " size="xmd-m"></ui-title>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-------TABLA------------------------>
+      <div class="ui-g-8 ui-g-nopad ui-sm-12 marginLeft">
+        <div class="tabla-ciclo">
+          <ui-title title="Consolidado por secciones" size="lg" color="#000"></ui-title>
+          <div class="tabla-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>SECCIONES</th>
+                  <th >6D6</th>
+                  <th>5D5</th>
+                  <th>4D4</th>
+                  <th>3D3</th>
+                  <th>2D2</th>
+                </tr>
+              </thead>
+
+              <tbody *ngFor="let currSE of prevcurrentSEUI">
+                <tr>
+                  <td> {{ currSE.section }} </td>
+                  <td> {{ currSE.i6d6 }} </td>
+                  <td> {{ currSE.i5d5 }} </td>
+                  <td> {{ currSE.i4d4 }} </td>
+                  <td> {{ currSE.i3d3 }} </td>
+                  <td> {{ currSE.i2d2 }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+  </ng-template>
+
+
+  <ng-template #loading>
+    Loading...
+  </ng-template>
+
+</ng-template>
+
+
+
+
+
+

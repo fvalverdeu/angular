@@ -1,0 +1,29 @@
+
+  <ui-card typeCard="CardDetail" >
+    <div class="gain-recovery">
+      <div class="list-items">
+        <ui-title title="% Recuperación {{ recoveryUI.campaign }}" size="lg-m"></ui-title>
+        <ui-title title="{{ recoveryUI.recovery_percent | number: '.1-1' }} %" size="md-d" color="#b9007e"></ui-title>
+      </div>
+      <hr>
+      <ul>
+        <li>
+          <ui-text text="Facturado {{ recoveryUI.campaign }}" size="md-d" color="#000"></ui-text>
+          <ui-title *ngIf="!activeButton" title="S/. {{ recoveryUI.billing | number: '.2-2' }}" size="md-d"></ui-title>
+          <ui-title *ngIf="activeButton" title="S/. {{ recoveryUI.billing | number: '.2-2' }}" size="md-d" color="#38BE62"></ui-title>
+        </li>
+        <li>
+          <ui-text text="Recuperado {{ recoveryUI.campaign }}" size="md-d" color="#000"></ui-text>
+          <ui-title *ngIf="!activeButton" title="S/. {{ recoveryUI.recovery | number: '.2-2' }}" size="md-d"></ui-title>
+          <ui-title *ngIf="activeButton" title="S/. {{ recoveryUI.billing | number: '.2-2' }}" size="md-d" color="#38BE62"></ui-title>
+        </li>
+      </ul>
+
+      <div class="activeButton">
+        <ui-title title="Activar cobranza a 31 días" size="md-d" color="#000"></ui-title>
+        <p-inputSwitch (onChange)="handleChange($event)" [(ngModel)]="activeButton"></p-inputSwitch>
+      </div>
+    </div>
+  </ui-card>
+
+

@@ -1,0 +1,271 @@
+/*{
+  outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.list {
+  padding-left: 30px;
+}
+
+// Title
+.iconHeader {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  text-align: right;
+  border-radius: 4px;
+  img{
+    margin: auto;
+  }
+}
+
+
+.listHeader{
+  background: #fff;
+  border-bottom: 1px solid #eaeaec;
+  //background: url("/assets/icons/a-icon-arrow-down-black.svg") no-repeat right;
+  background-position: 98% 18px !important;
+  padding: 12px 16px;
+}
+
+.listHeader.active {
+  background: url("/assets/icons/a-icon-arrow-down-white.svg") no-repeat right;
+  background-color: rgba(255, 218, 243, 0.4);
+}
+.list-consultant{
+  ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    li{
+      border-left:1px solid #eaeaec;
+      padding: 6px 0px 6px 10px;
+    }
+  }
+}
+
+.textTitle{
+  letter-spacing: 1.5px;
+  font-size:12px;
+  display: flex;
+  align-items: center;
+}
+
+.circlePoint{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+
+.magBackLight{
+  background-color: rgba(255,218,243,0.4);
+}
+
+.pinkBack{
+  background-color: #f33162;
+}
+
+.colorPink{
+  color: #f33162;
+}
+
+// Filters
+.filter{
+  background-color: #fff;
+  border-radius: 4px;
+  hr{
+      border: 0.5px solid #d1d1d4;
+  }
+  span{
+      color: #454549;
+      font-size: 18px;
+      font-weight: bold;
+  }
+  h4{
+      color: #454549;
+      font-size: 16px;
+      margin-bottom: 12px;
+  }
+  ul{
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      li{
+          padding: 12px 0px;
+          font-size: 14px;
+      }
+  }
+  input[type="checkbox"] {
+      display: none;
+  }
+
+  input[type="checkbox"] + label span {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: -1px 4px 0 0;
+      vertical-align: middle;
+      border: 1px solid #000000;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+
+  input[type="checkbox"]:checked + label span {
+      background: url(/assets/icons/check.svg);
+      background-color: #000000;
+  }
+}
+.check-labels{
+  margin-bottom: 37px;
+  display: flex;
+  align-items: center;
+  .label{
+    border-radius: 4px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    background: #909094;
+    span{
+      margin-right:7px;
+      color: #fff;
+    }
+  }
+  .clean-text{
+    color: #000;
+    text-decoration: underline;
+    span{
+      font-size: 14px;
+    }
+  }
+
+}
+// Find
+
+.icon-search4 {
+  cursor: pointer;
+}
+
+.searchFind{
+  display: flex;
+  justify-content: space-between;
+  p{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin: 0px;
+  }
+}
+.filterMobile{
+  display: none;
+  label{
+    font-size: 14px;
+    font-weight: bold;
+    margin-left:8px;
+  }
+}
+.searchFind span{
+  font-size: 12px;
+}
+.searchInput{
+  padding: 12px 80px 12px 8px;
+  border-radius: 4px;
+  border: none;
+}
+.infoConsultant{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searching{
+  position: relative;
+  input{
+    padding: 12px 80px 12px 8px;
+    border-radius: 4px;
+    border: none;
+  }
+  i{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
+}
+.number-consultant{
+  padding-bottom: 28px;
+}
+
+// Pagination
+
+.pagination{
+  float: right;
+  margin-top: 40px;
+}
+
+:host{
+  ::ng-deep .ui-paginator{
+    background-color: transparent;
+    border: none;
+    .ui-paginator-first{
+      display: none;
+    }
+    .ui-paginator-last{
+      display: none;
+    }
+    .ui-paginator-prev{
+      color: #000;
+      background: url(/assets/icons/a-icon-arrow-left.svg) center center no-repeat;
+
+    }
+    .ui-paginator-icon{
+     color: transparent;
+    }
+    .ui-paginator-next{
+      background: url(/assets/icons/a-icon-arrow-right.svg) center center  no-repeat;
+    }
+    .ui-paginator-pages .ui-paginator-page.ui-state-active{
+      background-color: transparent;
+      color: #b9007e;
+      font-weight: bold;
+    }
+  }
+}
+@media (max-width:650px){
+  .filter-sales{
+      display: none;
+  }
+  .list{
+    padding-left: 0px;
+  }
+  .infoConsultant{
+    margin-top: 16px;
+  }
+  .searching{
+    margin-top: 16px;
+  }
+}
+@media (max-width:650px){
+  .searchFind{
+    flex-direction: column-reverse;
+    margin-bottom: 24px;
+  }
+  .searching{
+    display: flex;
+  }
+  .searchInput{
+    width: 100%;
+  }
+  .filterMobile{
+    display: flex;
+    align-items: center;
+  }
+  .number-consultant{
+    padding-bottom: 0px;
+  }
+  .pagination{
+    float: none;
+  }
+  :host{
+    ::ng-deep .ui-paginator{
+     margin-top: 20px;
+    }
+  }
+}
+

@@ -1,0 +1,88 @@
+body .ui-table .ui-table-tbody > tr:nth-child(even) {
+  background-color: #ffffff !important;
+}
+
+.consolidado{
+  background-color: #fff;
+  padding: 24px 20px;
+  border-radius: 4px;
+}
+.table-consolidate{
+  margin-top: 24px;
+}
+.list-content{
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+}
+.first {
+  background-color: rgba(207,239,217) !important;
+  //opacity: 0.24 !important;
+  font-family: Lato !important;
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  text-align: center !important;
+  color: #2C2654;
+}
+
+.odd {
+  background-color: rgba(239,250,242) !important;
+  //opacity: 0.08 !important;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* a-color-black */
+
+  color: #000000;
+}
+
+.pair {
+  //background-color: #38BE62 !important;
+  background-color: rgba(247, 252, 249) !important;
+  //opacity: 0.04 !important;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* a-color-black */
+
+  color: #000000;
+}
+/**************COBRANZA**************/
+:host{
+  ::ng-deep{
+    .ui-table .ui-table-thead tr th{
+      background-color: transparent;
+      color:#38be62;
+      letter-spacing: 1.5px;
+      font-family: 'Lato';
+      border: none;
+    }
+    .ui-table table{
+      border-collapse: separate;
+    }
+    .ui-table .ui-table-tbody > tr > td{
+      border: none;
+    }
+  }
+  ::ng-deep{
+    .ng-star-inserted{
+      background: none;
+    }
+  }
+}

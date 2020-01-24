@@ -1,0 +1,21 @@
+<ng-template [ngIf]="isGZ" [ngIfElse]="isSE">
+  <ui-card (click)="redirectDetail()" class="redirect">
+    <ui-card-header>
+        <img src="assets/icons/a-icon-collectandprofit.svg" alt="" iconLeft  class="icon-card"/>
+        <ui-title [title]="title" size="xmd" color="color"></ui-title>
+        <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+    </ui-card-header>
+    <ng-template [ngIf]="data" [ngIfElse]="loading">
+        <div class="info-card">
+        <ui-info>
+            <ui-text text="Vas recuperando" size="md-d" up></ui-text>
+            <ui-title title="{{ uiPrevious.charge | number: '.1-1' }}%" size="lg-ex" down></ui-title>
+        </ui-info>
+        </div>
+    </ng-template>
+    <ng-template #loading>Loading...</ng-template>
+</ui-card>
+</ng-template>
+<ng-template #isSE>
+  <app-gain-se [sectionCode]="sectionSel"></app-gain-se>
+</ng-template>

@@ -1,0 +1,28 @@
+<ng-template [ngIf]="external" [ngIfElse]="internal">
+  <div></div>
+</ng-template>
+<ng-template #internal>
+  <div class="ui-g container ui-g-nopad">
+    <div class="ui-g-7 logo-login">
+      <img src="../../../../../../assets/images/illustration.jpg" alt="">
+    </div>
+    <div class="ui-g-5 ui-sm-12 form-login">
+      <img src="../../../../../../assets/logo/logo.png" alt="">
+      <br />
+      <span>belcorp.biz</span>
+      <form class="form" [formGroup]="presenter.authForm" (ngSubmit)="presenter.signIn()">
+        <input formControlName="username" name="username" type="text" class="form-control rounded-0" text="" required
+          placeholder="Nombre usuario" autofocus>
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" name="password" text="" required
+          placeholder="Contraseña">
+        <button type="submit" [disabled]="presenter.authForm.invalid" class="btn">Iniciar sesión</button>
+        <br />
+        <a href="" class="access">¿No puedes acceder a tu cuenta?</a>
+        <hr>
+        <p class="footer-login">
+          © Copyright Belcorp {{ year }}. All rights reserved
+        </p>
+      </form>
+    </div>
+  </div>
+</ng-template>

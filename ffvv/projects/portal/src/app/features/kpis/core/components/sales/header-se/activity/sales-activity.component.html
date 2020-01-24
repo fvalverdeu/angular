@@ -1,0 +1,33 @@
+<ui-card typeCard="CardDetail">
+  <div class="activity whiteBack">
+    <div class="headerInfo">
+      <ui-title title="Actividad" size="lg-m" color="#000000"></ui-title>
+      <ui-title title="Total: {{ saleActivity.total | number: '.1-1' }}%" size="xmd" color="#B9007E"></ui-title>
+    </div>
+    <ul class="listContent">
+      <li>
+        <ui-text text="Activas Finales" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ saleActivity.activityFinals }}" size="md-d"></ui-title>
+      </li>
+      <li>
+        <ui-text text="PEGs" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ saleActivity.pegs }}" size="md-d" color="#E81C36"></ui-title>
+      </li>
+    </ul>
+    <hr />
+    <div class="headerInfo">
+      <ui-title title="Retención Activas" size="lg-m" color="#000000"></ui-title>
+      <ui-title title="Total {{ saleActivity.totalRetention | number: '.1-1' }}%" size="xmd" color="#B9007E"></ui-title>
+    </div>
+    <ul class="listContent">
+      <li>
+        <ui-text text="Activas Finales {{ saleActivity.finalCampaignLastYear }}" size="md-d"></ui-text>
+        <ui-title title="{{ saleActivity.activityFinalsLastYear }} consultoras" size="md-d"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Activas Finales {{ saleActivity.previousCampaignAndYear }}" size="md-d"></ui-text>
+        <ui-title title="{{ saleActivity.activityFinalsPrevious }} consultoras" size="md-d"></ui-title>
+      </li>
+    </ul>
+  </div>
+</ui-card>

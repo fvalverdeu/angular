@@ -1,0 +1,124 @@
+<div class="sales-table">
+  <ui-title [title]="salesOrders.campaign" size="lg" color="#000"></ui-title>
+  <div class="table-responsive">
+    <div class="pills-sale">
+      <button type="button" (click)="activeSale()" [ngClass]="{'active': showSale}">Venta</button>
+      <button type="button" (click)="activeOrder()" [ngClass]="{'active': showOrder}">Pedidos</button>
+      <button type="button" (click)="activeActivity()" [ngClass]="{'active': showActivity}">Actividad</button>
+      <button type="button" (click)="activeCapitalization()" [ngClass]="{'active': showCapitalization}">Capitalización</button>
+      <button type="button" (click)="activePegs()" [ngClass]="{'active': showPegs}">PEGs</button>
+    </div>
+  </div>
+  <ng-template [ngIf]="showSale">
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th><div>ZONA/</div><div>SECCIONES</div></th>
+          <th>REAL</th>
+          <th>META</th>
+          <th>CUMPLIMIENTO</th>
+          <th>PROMEDIO</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of salesOrders.salesOrderList">
+          <td>{{item.section}}</td>
+          <td>{{item.sales.netSaleCatalog | number: '.2-2'}}</td>
+          <td>{{item.sales.netSaleCatalogGoal | number: '.2-2'}}</td>
+          <td>{{item.sales.fulfillmentsVsCatalogSales | number: '.1-1'}}</td>
+          <td>{{item.sales.ordersAverage | number: '.2-2'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="showOrder">
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th><div>ZONA/</div><div>SECCIONES</div></th>
+          <th>REAL</th>
+          <th>META</th>
+          <th>CUMPLIMIENTO</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of salesOrders.salesOrderList">
+          <td>{{item.section}}</td>
+          <td>{{item.orders.orders}}</td>
+          <td>{{item.orders.ordersGoal}}</td>
+          <td>{{item.orders.fulfillmentsVsOrdersobjective | number: '.1-1'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="showActivity">
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th><div>ZONA/</div><div>SECCIONES</div></th>
+          <th>ACTIVIDADES INICIALES</th>
+          <th>ACTIVIDADES FINALES</th>
+          <th>ACTIVIDAD</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of salesOrders.salesOrderList">
+          <td>{{item.section}}</td>
+          <td>{{item.activity.initialsActive}}</td>
+          <td>{{item.activity.finalsActive}}</td>
+          <td>{{item.activity.activityPercentage | number: '.1-1'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="showCapitalization">
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th><div>ZONA/</div><div>SECCIONES</div></th>
+          <th>CAPITALIZACIÓN</th>
+          <th>INGRESOS</th>
+          <th>REINGRESOS</th>
+          <th>EGRESOS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of salesOrders.salesOrderList">
+          <td>{{item.section}}</td>
+          <td>{{item.capitalization.capitalization}}</td>
+          <td>{{item.capitalization.incomes}}</td>
+          <td>{{item.capitalization.reentries}}</td>
+          <td>{{item.capitalization.expenses}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="showPegs">
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th><div>ZONA/</div><div>SECCIONES</div></th>
+          <th>PEGS</th>
+          <th>RETENCIÓN DE PEGS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of salesOrders.salesOrderList">
+          <td>{{item.section}}</td>
+          <td>{{item.pegs.pegs_retention}}</td>
+          <td>{{item.pegs.retention_percentage_pegs | number: '.1-1'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</div>

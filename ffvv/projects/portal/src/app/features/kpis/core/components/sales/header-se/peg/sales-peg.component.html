@@ -1,0 +1,26 @@
+<ui-card typeCard="CardDetail">
+  <div class="activity whiteBack">
+    <div class="headerInfo">
+      <ui-title title="PEGs" size="lg-m" color="#000000"></ui-title>
+    </div>
+    <ul class="listContent">
+      <li>
+        <ui-text text="PEGs retenidas" size="md-d" color="#000000"></ui-text>
+        <ui-title [title]="salePeg.pegs_retention" size="md-d"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Retención de PEGs" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ salePeg.retention_percentage_pegs | number: '.1-1' }}%" size="md-d"></ui-title>
+      </li>
+      <li>
+        <ui-text text="PEGs por retener" size="md-d" color="#000000"></ui-text>
+        <ui-title title="{{ salePeg.pegs_to_retain }}" size="md-d"></ui-title>
+      </li>
+    </ul>
+    <hr />
+    <div class="headerInfo">
+      <ui-title title="Actividad" size="lg-m" color="#000000"></ui-title>
+      <ui-title title="Total: {{ salePeg.totalActivity | number: '.1-1' }}%" size="xmd" color="#B9007E"></ui-title>
+    </div>
+  </div>
+</ui-card>

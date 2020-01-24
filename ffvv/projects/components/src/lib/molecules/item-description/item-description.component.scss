@@ -1,0 +1,23 @@
+body{
+  font-family: 'Lato';
+}
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+p{
+  margin: 0px;
+}
+
+.description {
+  display: none;
+}
+
+.listDetail{
+  background: #fff;
+  border-bottom: 1px solid #eaeaec;
+  padding: 16px;
+  display: flex;
+  font-size: 12px;
+}

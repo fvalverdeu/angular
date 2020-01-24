@@ -1,0 +1,42 @@
+.report:hover{
+  -webkit-box-shadow: 0px 4px 10px 5px rgba(221,221,225,1);
+-moz-box-shadow: 0px 4px 10px 5px rgba(221,221,225,1);
+box-shadow: 0px 4px 10px 5px rgba(221,221,225,1);
+}
+button{
+  background: #fff;
+  color:#000;
+  border-radius: 4px;
+  padding: 12px 40px;
+  border: none;
+  letter-spacing: 1px;
+  font-family: Lato,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.title-report{
+  margin-top: 20px;
+}
+.icon-card{
+  background-color: rgba(255, 255, 255, 0.24);
+  border-radius: 100%;
+  padding: 4px;
+}
+.icon-mobile{
+  width: 14px;
+  height: 14px;
+  display: none;
+}
+.info-card{
+  margin-top: 20px;
+}
+
+@media (max-width:650px){
+  .icon-mobile{
+    display: block;
+  }
+  button{
+    display: none;
+  }
+}

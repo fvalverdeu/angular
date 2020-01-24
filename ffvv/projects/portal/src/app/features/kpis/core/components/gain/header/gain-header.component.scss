@@ -1,0 +1,171 @@
+/*{
+  outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.marginRight{
+  padding-right: 15px;
+}
+.marginCard{
+  padding: 0px 15px;
+}
+.marginLeft{
+  padding-left: 15px;
+}
+.firstCard{
+  display: inline-block;
+}
+.colorTextMag{
+  color: #b9007e;
+}
+.colorBlue{
+  color: #2c2654;
+}
+.colorGreen{
+  color:#38be62;
+}
+.divided{
+  margin: 0px 16px;
+}
+.whiteBack{
+  background-color: #fff;
+}
+
+.show-mobile{
+  display: none;
+}
+/* RIGHT */
+.gain{
+  padding: 20px 16px;
+  display: flex;
+  background: #fff;
+  
+  h4{
+    margin-bottom: 12px;
+  }
+  hr{
+    border: 0.5px solid #eaeaec;
+    margin: 0px 16px;
+  }
+  .leftSideContainer,.rightSideContainer{
+    width: 50%;
+  }
+  .headerInfo{
+    margin-bottom: 20px;
+  }
+  .listContent{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    li{
+      display: flex;
+      justify-content: space-between;
+      width: 100%; /*añadir el ancho para dar el espaciado entre elementos*/
+      margin-bottom: 16px;
+      p{
+        margin: 0px;
+      }
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* LEFT */
+
+.sellCard{
+  padding:20px 16px 50px;
+  border-radius: 4px;
+  .listContent{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    li{
+      display: flex;
+      justify-content: space-between;
+      width: 100%; /*añadir el ancho para dar el espaciado entre elementos*/
+      margin-bottom: 16px;
+    }
+    p{
+      margin: 0px;
+    }
+    span{
+      font-weight: bold;
+    }
+  }
+  hr{
+    border: 0.5px solid #eaeaec;
+    margin: 16px 0px;
+  }
+  .tip{
+    padding: 12px;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 4px;
+    background: #f7f6f8;
+    p{
+      font-size: 12px;
+      margin: 0px 0px 0px 4px;
+    }
+  }
+}
+.show-mobile{
+  display: none;
+}
+.grayText{
+  color: #909094;
+}
+@media (max-width:650px){
+  .gain{
+    background: none;
+    display: block;
+    padding: 0px;
+    .leftSideContainer, .rightSideContainer{
+      width: 100%;
+      background: #fff;
+      padding: 12px;
+    }
+    .leftSideContainer{
+      margin-bottom: 16px;
+    }
+    .hide-mobile{
+      display: none;
+    }
+    .headerInfo{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eaeaec;
+      padding-bottom: 12px;
+    }
+  }
+  .show-mobile{
+    display: block;
+  }
+  .tip{
+    padding: 0px;
+    background: none;
+    p{
+      font-size: 10px;
+    }
+  }
+  .sellCard{
+    padding:20px 16px;
+  }
+  .marginLeft{
+    padding-left: 0px;
+    //padding-bottom: 16px;
+  }
+  .marginRight{
+    padding-right: 0px;
+    padding-bottom: 16px;
+  }
+  .marginCard{
+    padding: 0px;
+    padding-bottom: 16px;
+  }
+}
+
+/*.headerPage .leftSideContainer, .headerPage .rightSideContainer{
+  display: flex;
+  align-items: center;
+}*/

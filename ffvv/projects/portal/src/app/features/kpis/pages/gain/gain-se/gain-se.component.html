@@ -1,0 +1,22 @@
+<div class="container ui-g">
+  <div class="ui-g-12 advicePage mb-3">
+    <span><a routerLink="/PortalFFVV/home-se">Inicio</a> > Ganancia y Saldo</span>
+    <div class="iconHeader ml-1">
+        <img src="assets/icons/a-icon-arrow-right.svg" alt="" class="" />
+    </div>
+  </div>
+  <div class="TitlePage ui-g-12">
+    <app-gain-title></app-gain-title>
+  </div>
+  <div class="ui-g-12 ui-g-nopad headerSales">
+    <h4 class="mb-2">Resultados de la sección en {{prevCampaign}}</h4>
+    <app-gain-header></app-gain-header>
+  </div>
+  <div class="ui-g-12 subtitle ui-g-nopad">
+    <img src="assets/icons/gestionar-cobranza.svg" alt="" />
+    <h4>Consultoras con deuda pendiente</h4>
+  </div>
+  <div class="ui-g-12 ui-g-nopad list">
+      <app-gain-list></app-gain-list>
+  </div>
+</div>

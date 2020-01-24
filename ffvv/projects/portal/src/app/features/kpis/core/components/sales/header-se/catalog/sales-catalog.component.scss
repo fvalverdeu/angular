@@ -1,0 +1,125 @@
+.venta{
+  display: flex;
+}
+
+h3, h4, p{
+  margin: 0px;
+}
+/*******COLORS*******/
+.colorTextMag{
+  color:#b9007e
+}
+.colorBlue{
+  color: #2c2654;
+}
+.colorTextLittle {
+  color: #454549;
+}
+.whiteBack{
+  background-color: #fff;
+}
+.orangeLightBack{
+  background-color: #fef6e2;
+}
+/**************************/
+.sellCard {
+    padding:20px 16px;
+    border-radius: 4px;
+    height: fit-content;
+
+      .adviceBig{
+        border-radius: 4px;
+        padding: 18px 12px;
+        width: 50%;
+      }
+      .adviceBig h4:first-child{
+        margin-bottom: 4px;
+      }
+      .sectionInfo{
+        display: flex;
+        align-content: center;
+        margin-bottom: 16px;
+      }
+      .meta{
+        padding: 0px 16px;
+        list-style: none;
+        margin: 0px;
+      }
+      .meta span, .meta p{
+        font-size: 14px;
+      }
+      .meta p{
+        font-weight: bold;
+      }
+      .meta li:first-child{
+        margin-bottom:12px;
+      }
+      .promedy li{
+        margin-bottom: 0px;
+      }
+      /********LISTAS***********/
+      .listContent{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+          li{
+              display: flex;
+              justify-content: space-between;
+              width: 100%; /*añadir el ancho para dar el espaciado entre elementos*/
+              margin-bottom: 16px;
+          }
+          p{
+              margin: 0px;
+          }
+          span{
+              font-weight: bold;
+          }
+      }
+}
+
+
+
+/*****segundo card **/
+.activity{
+  margin: 0px 16px;
+  width: 370px;
+  padding: 20px 16px;
+}
+hr{
+  border: 0.5px solid #eaeaec;
+  margin: 16px 0px;
+}
+/***gain****/
+.gain{
+  margin: 0px 16px;
+  width: 72%;
+  padding: 20px 16px;
+  display: flex;
+}
+.divided{
+  margin: 0px 16px;
+}
+.gain .leftSideContainer, .gain .rightSideContainer{
+  width: 50%;
+}
+/******tercero card **/
+.capital{
+  margin: 0px 16px;
+  width: 370px;
+  padding: 20px 16px;
+}
+.headerInfo{
+  margin-bottom: 20px;
+}
+/**/
+.pedidosValor {
+  margin-top:24px;
+}
+
+
+.left {
+  margin-left: 150px;
+}
+.right {
+  margin-left: 200px;
+}

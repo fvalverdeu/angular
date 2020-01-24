@@ -1,0 +1,45 @@
+/*{
+    outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.icon-card{
+   background-color: #fcecc4;
+   border-radius: 100%;
+   padding: 4px;
+}
+.info-card{
+    margin-top: 20px;
+}
+.info-card-padding{
+    padding-top: 20px;
+}
+.info-complete{
+    display: flex;
+    justify-content: space-between;
+    .info-right{
+        margin-top: 42px;
+        text-align: left;
+        border-left: 1px solid #eaeaec;
+        display: flex;
+        padding: 0px 100px 0px 16px;
+
+    }
+}
+.venta-facturacion{
+  display: flex;
+  align-items: center;
+}
+.aim{
+    display: flex;
+    align-items: center;
+}
+
+
+.redirect {
+    cursor: pointer;
+}
+/*.redirect:hover{
+
+        -webkit-box-shadow: 0px 4px 10px 5px rgba(221,221,225,1);
+    -moz-box-shadow: 0px 4px 10px 5px rgba(221,221,225,1);
+    box-shadow: 0px 4px 10px 5px rgba(221,221,225,1);
+}*/

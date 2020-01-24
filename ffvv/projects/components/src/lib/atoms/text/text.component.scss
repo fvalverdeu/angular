@@ -1,0 +1,163 @@
+.xlg {
+  font-size: 24px;
+  line-height: 29px;
+}
+.lg {
+  font-size: 18px;
+  line-height: 22px;
+}
+.xmd {
+  font-size: 16px;
+  line-height: 19px;
+}
+.md {
+  font-size: 14px;
+  line-height: 17px;
+}
+.sm {
+  font-size: 12px;
+  line-height: 14px;
+}
+.xsm {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+span {
+  font-weight: normal;
+  font-style: normal;
+  font-family: Lato,sans-serif;
+}
+.xlg {
+  font-size: 24px;
+  line-height: 29px;
+}
+.lg-d {
+  font-size: 18px;
+  line-height: 22px;
+}
+.lg-m {
+  font-size: 18px;
+  line-height: 22px;
+}
+.lg-ex {
+  font-size: 18px;
+  line-height: 22px;
+}
+.xmd-d {
+  font-size: 16px;
+  line-height: 19px;
+}
+.xmd-m {
+  font-size: 16px;
+  line-height: 19px;
+}
+.xmd-x {
+  font-size: 16px;
+  line-height: 19px;
+}
+.md-d {
+  font-size: 14px;
+  line-height: 17px;
+}
+.md-m {
+  font-size: 14px;
+  line-height: 17px;
+}
+.sm-d{
+  font-size: 12px;
+  line-height: 14px;
+}
+.sm-m{
+  font-size: 12px;
+  line-height: 14px;
+}
+.xsm {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+span {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Lato',sans-serif;
+}
+/**************COLORS****************/
+.blue{
+  color: #2c2654;
+}
+.white{
+  color: #fff;
+}
+.black{
+  color: #000;
+}
+.magenta{
+  color: #b9007e;
+}
+.dark-gray{
+  color: #454549;
+}
+.gray{
+  color: #909094;
+}
+.pink{
+  color: #f33162;
+}
+.orange{
+  color: #fcab53;
+}
+.green{
+  color:#38be62;
+}
+.gold{
+  color: #ad8a47;
+}
+.light-blue{
+  color:#39bbb1;
+}
+
+@media (max-width:650px){
+  .xlg{
+    font-size: 18px;
+  }
+  .lg-d {
+    font-size: 18px!important;
+    line-height: 12px;
+  }
+  .lg-m {
+    font-size: 14px!important;
+    line-height: 12px;
+  }
+  .lg-ex {
+    font-size: 16px!important;
+    line-height: 12px;
+  }
+  .md-d{
+    font-size: 14px!important;
+  }
+  .md-m{
+    font-size: 12px!important;
+  }
+  .xmd-d {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .xmd-m{
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .xmd-x {
+    font-size: 10px;
+    line-height: 19px;
+  }
+  .sm-d{
+    font-size: 12px;
+  }
+  .sm-m{
+    font-size: 10px;
+  }
+  .xsm{
+    font-size: 10px;
+  }
+}

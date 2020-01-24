@@ -1,0 +1,202 @@
+/*Filter -left*/
+.filter-gain{
+  padding-right: 15px;
+  .filter{
+    background-color: #fff;
+    border-radius: 4px;
+    hr{
+        border: 0.5px solid #d1d1d4;
+    }
+    span{
+        color: #454549;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    h4{
+        color: #454549;
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    ul{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        li{
+            padding: 12px 0px;
+            font-size: 14px;
+        }
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"] + label span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        border: 1px solid #000000;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    input[type="checkbox"]:checked + label span {
+        background: url(/assets/icons/check.svg);
+        background-color: #000000;
+    }
+  }  
+}
+/*Filter -right*/
+.list{
+  padding-left: 15px ;
+  .searchFind{
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0px 48px 0px;
+
+    .infoConsultant{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .filterMobile{
+        display: none;
+        label{
+          font-size: 14px;
+          font-weight: bold;
+          margin-left:8px;
+        }
+      }
+    }
+    .searching{
+        position: relative;
+        input{
+          padding: 12px 80px 12px 8px;
+          border-radius: 4px;
+          border: none;
+        }
+        i{
+          position: absolute;
+          right: 10px;
+          top: 12px;
+        }
+    }
+    .number-consultant{
+      p{
+        font-size: 16px;
+        color: #454549;
+        font-weight: bold;
+        margin: 0px;
+      }
+    }
+  }
+
+  /*********LISTA DE CONSULTORAS**********/
+  .list-consultant{
+    ul{
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      border-left: 1px solid #eaeaec;
+      padding: 4px 0px 4px 10px;
+      li{
+        margin-bottom: 12px;
+      }
+      li:last-child{
+        margin-bottom: 0px;
+      }
+    }
+    .textTitle{
+      letter-spacing: 1.5px;
+      font-size:12px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      .circlePoint{
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        margin-right: 2px;
+        background-color: #F33162;
+      }
+    }
+  }
+}
+/*********PAGINATION**********/
+.pagination{
+  float: right;
+  margin-top: 40px;
+}
+
+:host{
+  ::ng-deep .ui-paginator{
+    background-color: transparent;
+    border: none;
+    .ui-paginator-first{
+      display: none;
+    }
+    .ui-paginator-last{
+      display: none;
+    }
+    .ui-paginator-prev{
+      color: #000;
+      background: url(/assets/icons/a-icon-arrow-left.svg) center center no-repeat;
+
+    }
+    .ui-paginator-icon{
+     color: transparent;
+    }
+    .ui-paginator-next{
+      background: url(/assets/icons/a-icon-arrow-right.svg) center center  no-repeat;
+    }
+    .ui-paginator-pages .ui-paginator-page.ui-state-active{
+      background-color: transparent;
+      color: #b9007e;
+      font-weight: bold;
+    }
+  }
+}
+.show-mobile{
+  display: none;
+}
+@media (max-width:650px){
+  .list{
+    padding-left: 0px;
+    .searchFind{
+      flex-direction: column-reverse;
+      margin: 16px 0px 24px 0px;
+      .infoConsultant{
+        margin-top:16px;
+        .filterMobile{
+          display: flex;
+          align-items: center;
+        }
+      }
+      .number-consultant{
+        p{
+          font-size: 12px;
+        }
+      }
+      .searching{
+        input{
+          width: 100%;
+        }
+       
+      }
+    }
+  }
+  .filter-gain{
+    display: none;
+  }
+  .show-mobile{
+    display: block;
+  }
+  .pagination{
+    float: none;
+  }
+  :host{
+    ::ng-deep .ui-paginator{
+     margin-top: 20px;
+    }
+  }
+}

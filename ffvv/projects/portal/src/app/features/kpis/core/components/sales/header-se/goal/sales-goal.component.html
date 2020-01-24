@@ -1,0 +1,20 @@
+<ui-card typeCard="CardDetail">
+  <div class="goalOrder whiteBack">
+    <div class="headerInfo">
+      <div class="promedy">
+        <ng-template [ngIf]="roadBright" [ngIfElse]="noRoadBright">
+          <div class="promedyMeta">
+            <span>💪</span> <ui-title title="Meta Venta Cat. {{ saleGoal.currentCampaign }}" size="lg-m" class="ml-1"></ui-title>
+          </div>
+          <ui-title title="{{ saleGoal.saleGoalCurrent | number: '.2-2'  }}" size="lg-d" color="#B9007E"></ui-title>
+        </ng-template>
+        <ng-template #noRoadBright>
+          <div class="promedyMeta">
+            <span>💪</span> <ui-title title="Meta Pedidos {{ saleGoal.currentCampaign }}" size="lg-m" class="ml-1"></ui-title>
+          </div>
+          <ui-title title="{{ saleGoal.ordersGoalCurrent }}" size="lg-d" color="#B9007E"></ui-title>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</ui-card>

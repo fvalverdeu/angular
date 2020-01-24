@@ -1,0 +1,54 @@
+/*{
+    outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.container-cards{
+    margin-top: 56px;
+ 
+}
+.container-cards-down{
+    margin-top: 32px;
+}
+.title-cards{
+    margin: 0px 0px 12px;
+}
+.margin-right{
+    padding-right:15px
+}
+.margin-left{
+    padding-left: 15px;
+}
+.margin{
+    padding: 0px 15px;
+}
+
+@media (max-width:650px){
+    .profile{
+        margin: 0px 12px;
+    }
+    .container-cards{
+        margin: 24px 12px 0px;
+    }
+    .title-cards{
+        margin: 0px 0px 8px;
+    }
+    .margin{
+        padding: 0px;
+        padding-bottom: 12px;
+    }
+    .margin-right{
+        padding-right: 0px;
+        padding-bottom: 12px;
+    }
+    .margin-left{
+        padding-left: 0px;
+        padding-bottom: 12px;
+    }
+    .container-cards-down{
+        padding: 0px 12px;
+        margin-top: 0px;
+    }
+}

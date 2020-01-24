@@ -1,0 +1,42 @@
+<div class="UserRoles" *ngIf=showPanel>
+  <div class="ui-g ">
+    <div class="ui-g-2 ui-g-offset-1">
+      <div>
+        <span>Perfil</span>
+        <br>
+        <p-dropdown [options]="profileSelect" [(ngModel)]="selectedRole" (onChange)="showUA(selectedRole)"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g-2">
+      <div>
+        <span>País</span>
+        <br>
+        <p-dropdown [options]="countrySelect" [(ngModel)]="selectedCountry" (onChange)="listRegionByIso($event.value)">
+        </p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g-2">
+      <div *ngIf="showGR">
+        <span>Región</span>
+        <br>
+        <p-dropdown [options]="regionSelect" [(ngModel)]="selectedRegion" (onChange)="listZone($event.value)">
+        </p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g-2">
+      <div *ngIf="showGZ">
+        <span>Zona</span>
+        <br>
+        <p-dropdown [options]="zoneSelect" [(ngModel)]="selectedZone"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g-2 Upload">
+      <button (click)="saveSessionSac()"> Actualizar</button>
+    </div>
+  </div>
+</div>
+
+<div (click)=showOptionSac() class="showSac" *ngIf=showPanel>
+  <span>Cambiar Perfil </span>
+  <img src="../../../../../assets/a-icon-arrow-down-white.svg" alt="">
+</div>

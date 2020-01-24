@@ -1,0 +1,73 @@
+h3, h4, p{
+  margin: 0px;
+}
+.colorTextMag{
+  color:#b9007e
+}
+.colorBlue{
+  color: #2c2654;
+}
+
+.grayText{
+  color: #909094;
+}
+
+.capital{
+  padding: 20px 16px 68px;
+
+  .headerInfo{
+    margin-bottom: 20px;
+  }
+
+  /********LISTAS***********/
+  .listContent{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+      li{
+          display: flex;
+          justify-content: space-between;
+          width: 100%; /*añadir el ancho para dar el espaciado entre elementos*/
+          margin-bottom: 16px;
+      }
+      p{
+          margin: 0px;
+      }
+      span{
+          font-weight: bold;
+      }
+  }
+}
+ /*****************TIP*******************/
+ .tip{
+  padding: 12px;
+  display: flex;
+  border-radius: 4px;
+  background: #f7f6f8;
+  align-items: flex-start;
+  p{
+    font-size: 12px;
+    margin-left: 4px;
+  }
+}
+/**/
+.pedidosValor {
+  margin-top:24px;
+}
+
+.final {
+  margin-bottom: 250px;
+}
+@media (max-width:650px){
+  .tip{
+    background: none;
+    padding: 0px;
+  }
+  .capital{
+    padding: 20px 16px;
+    
+  }
+  .hide-mobile{
+    display: none;
+  }
+}

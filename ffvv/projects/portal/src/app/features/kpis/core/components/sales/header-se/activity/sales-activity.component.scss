@@ -1,0 +1,44 @@
+h3, h4, p{
+  margin: 0px;
+}
+hr{
+  border: 0.5px solid #eaeaec;
+  margin: 16px 0px;
+}
+
+/*******COLORS*******/
+.colorTextMag{
+  color:#b9007e
+}
+.colorBlue{
+  color: #2c2654;
+}
+.colorTextLittle {
+  color: #454549;
+}
+.activity{
+  padding: 20px 16px;
+
+  .headerInfo{
+    margin-bottom: 20px;
+  }
+   /********LISTAS***********/
+   .listContent{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+      li{
+          display: flex;
+          justify-content: space-between;
+          width: 100%; /*añadir el ancho para dar el espaciado entre elementos*/
+          margin-bottom: 16px;
+          font-size: 14px;
+      }
+      p{
+          margin: 0px;
+      }
+      span{
+          font-weight: bold;
+      }
+  }
+}

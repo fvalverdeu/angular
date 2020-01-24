@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="ui-g-4 ui-sm-12 ui-g-nopad marginLeft">
+    <app-sales-catalog [saleCatalog]="saleCatalogUI" [sale]="isSale" [roadBright]="isBrightRoad"></app-sales-catalog>
+    <app-sales-goal [saleGoal]="saleGoalUI" [sale]="isSale" [roadBright]="isBrightRoad" *ngIf="isSale"></app-sales-goal>
+  </div>
+  <div class="ui-g-4 ui-sm-12 ui-g-nopad marginCard">
+    <ng-template [ngIf]="isSale" [ngIfElse]="billing">
+      <app-sales-activity [saleActivity]="saleActivityUI"></app-sales-activity>
+    </ng-template>
+    <ng-template #billing>
+      <app-sales-peg [salePeg]="salePegUI"></app-sales-peg>
+    </ng-template>
+  </div>
+  <div class="ui-g-4 ui-sm-12 ui-g-nopad marginRight">
+    <app-sales-capitalization [saleCapitalize]="saleCapitalizeUI"></app-sales-capitalization>
+  </div>
+</div>

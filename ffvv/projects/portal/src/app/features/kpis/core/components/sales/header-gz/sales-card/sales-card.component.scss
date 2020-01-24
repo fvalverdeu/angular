@@ -1,0 +1,24 @@
+.sales-card{
+    padding: 24px 20px;
+    border-radius: 4px;
+    background-color: #fff;
+
+    ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        li{
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /*añadir el ancho para dar el espaciado entre elementos*/
+            margin-bottom: 12px;
+        }
+        li:last-child{
+          margin-bottom: 0px;
+        }
+    }
+    hr{
+        margin: 16px 0px;
+        border: 1px solid #eaeaec;
+    }
+}

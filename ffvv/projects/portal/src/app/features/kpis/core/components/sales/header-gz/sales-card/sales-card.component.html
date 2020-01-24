@@ -1,0 +1,30 @@
+  <div class="sales-card">
+    <ul>
+      <li class="">
+        <ui-title title="Venta Neta" size="lg-m"></ui-title>
+        <ui-title title="{{currencySymbol}} {{ saleOrderGZ.netSale | number: '.2-2' }}" size="lg-m" color="#b9007e"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Cumplimiento de Meta" size="md-d"></ui-text>
+        <ui-title title="{{ saleOrderGZ.fulfillmentsVsSales | number: '.1-1' }}%" size="lg-m"></ui-title>
+      </li>
+      <hr>
+      <li>
+        <ui-title title="Pedidos" size="lg-m"></ui-title>
+        <ui-title title="{{ saleOrderGZ.ordersGoal }}" size="lg-m" color="#b9007e"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Cumplimiento de Meta" size="md-d"></ui-text>
+        <ui-title title="{{ saleOrderGZ.fulfillmentsVsOrdersObjective | number: '.1-1' }}%" size="lg-m"></ui-title>
+      </li>
+      <hr>
+      <li>
+        <ui-title title="Promedio (PMNP)" size="lg-m"></ui-title>
+        <ui-title title="{{ saleOrderGZ.ordersAverage }}" size="lg-m" color="#b9007e"></ui-title>
+      </li>
+      <li>
+        <ui-text text="Cumplimiento de Meta" size="md-d"></ui-text>
+        <ui-title title="{{ saleOrderGZ.fulfillmentsVsOrdersAverage | number: '.1-1' }}%" size="lg-m"></ui-title>
+      </li>
+    </ul>
+  </div>

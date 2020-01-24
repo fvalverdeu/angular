@@ -1,0 +1,77 @@
+/*{
+  outline: 1px solid rgba(0,255,0,0.5);
+}*/
+
+.gain-recovery{
+  padding: 24px 20px;
+  .list-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  hr{
+    margin: 16px 0px;
+    border: 1px solid #eaeaec;
+  }
+  ul{
+    margin: 0px;
+    padding: 0px;
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    li:last-child{
+      margin-bottom: 0px;
+    }
+  }
+}
+.activeButton {
+  margin-top: 32px;
+  border: 1px solid #eaeaec;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+
+  //*********** SWITCH **************//
+  :host{
+    ::ng-deep .ui-inputswitch{
+      width: 27px;
+      height: 16px;
+
+      .ui-inputswitch-slider{
+        background-color: #eaeaec;
+      }
+    }
+  ::ng-deep .ui-inputswitch .ui-inputswitch-slider:before{
+    width: 13px;
+    height: 13px;
+    left: 2px;
+    bottom: 2px;
+
+  }
+  ::ng-deep .ui-inputswitch:not(.ui-state-disabled):hover .ui-inputswitch-slider{
+    background-color: #eaeaec;
+  }
+  ::ng-deep .ui-inputswitch.ui-inputswitch-focus .ui-inputswitch-slider{
+    background-color: #eaeaec;
+  }
+  ::ng-deep .ui-inputswitch.ui-inputswitch-checked.ui-inputswitch-focus .ui-inputswitch-slider{
+    background-color: #000;
+  }
+  ::ng-deep .ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-slider:before{
+    transform: translateX(10px);
+  }
+  ::ng-deep .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider{
+    background-color: #000;
+  }
+}
+
+.green {
+  color: '#38BE62' !important;
+}

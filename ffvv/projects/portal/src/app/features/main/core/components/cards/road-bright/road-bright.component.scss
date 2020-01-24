@@ -1,0 +1,44 @@
+.icon-card{
+    background-color: #cfefec;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    padding: 0px 3px;
+ }
+ .info-card{
+     margin-top: 20px;
+     margin-bottom: 20px;
+ }
+ :host{
+    ::ng-deep .ui-table table{
+        text-align: center;
+       .ui-table-thead>tr>th{
+           border: 1px solid #fff;
+           font-size: 10px;
+           color: #6879f8;
+           letter-spacing: 1.5px;
+           font-weight: bold;
+           background-color: #fff;
+           padding: 0px;
+       }
+       .ui-table-thead>tr>th:first-child{
+           width: 80px;
+           height: 30px;
+       }
+       .ui-table-tbody>tr>td{
+           border: 0.5px solid #fff;
+           background-color: rgba(104, 121, 248, 0.12);
+           font-size: 12px;
+           font-weight: bold;
+           color: #2c2654;
+       }
+       .ui-table-tbody>tr>td:nth-child(1){
+           letter-spacing: 1.5px;
+           color: #2c2654;
+           font-size: 10px;
+           font-weight: normal;
+           width: 90px;
+           text-align: left;
+       }
+    }
+}

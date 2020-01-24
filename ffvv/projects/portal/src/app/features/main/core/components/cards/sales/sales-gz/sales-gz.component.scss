@@ -1,0 +1,41 @@
+/*{
+    outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.icon-card{
+    background-color: #fcecc4;
+    border-radius: 100%;
+    padding: 4px;
+ }
+ .info-card{
+    padding-top: 20px;
+ }
+ .info-complete{
+     display: flex;
+     justify-content: space-between;
+     .info-right{
+         margin-top: 42px;
+         text-align-last: center;
+         border-left: 1px solid #eaeaec;
+         display: flex;
+         padding: 0px 100px 0px 16px;
+     }
+ }
+ .first-progress-bar{
+    margin-bottom: 24px;
+ }
+ :host{
+     ::ng-deep .ui-progressbar{
+         background-color: #f8e5f2;
+         border-radius: 4px;
+         height: 4px;
+
+         .ui-progressbar-value{
+            background-color: #b9007e;
+        }
+     }
+
+ }
+
+ .redirect {
+  cursor: pointer;
+}

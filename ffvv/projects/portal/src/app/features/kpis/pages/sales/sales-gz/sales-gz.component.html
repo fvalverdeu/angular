@@ -1,0 +1,33 @@
+<div class="container ui-g">
+  <div class="ui-g-12 ui-g-nopad advicePage">
+    <span><a routerLink="/PortalFFVV/home-gz">Inicio</a> > Venta y Pedidos</span>
+    <div class="iconHeader ml-1">
+      <img src="assets/icons/a-icon-arrow-right.svg" alt="" class="" />
+    </div>
+  </div>
+  <div class="TitlePage ui-g-12 ui-g-nopad">
+    <app-sales-title rightTitle="Ir a Cobranza"></app-sales-title>
+  </div>
+  <div class="ui-g-12 ui-g-nopad headerSales">
+    <h4 class="mb-2">{{ subTitle }}</h4>
+    <app-sales-header-gz></app-sales-header-gz>
+  </div>
+  <!-- Abajo lo verá Fernando -->
+  <div class="ui-g-12 ui-g-nopad subtitle ">
+    <h4>Detalle de las Secciones</h4>
+  </div>
+  <div class="section-list">
+    <app-section-list [showZone]="showZone" [sectionDefault]="sectionSelected"></app-section-list>
+  </div>
+  <div class="ui-g-12 ui-g-nopad">
+    <app-sales-header-se [sectionCode]="sectionSelected"></app-sales-header-se>
+  </div>
+
+  <div>
+    <br>
+    &nbsp;
+  </div>
+  <div class="ui-g-12 ui-sm-12 ui-g-nopad list">
+    <app-sales-list></app-sales-list>
+  </div>
+</div>

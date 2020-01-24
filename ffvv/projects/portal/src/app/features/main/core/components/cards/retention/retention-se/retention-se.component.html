@@ -1,0 +1,86 @@
+<ui-card (click)="redirectDetail()" class="redirect retention">
+  <ui-card-header>
+    <img src="assets/icons/a-icon-cyclenews.svg" alt="" iconLeft class="icon-card" />
+    <ui-title [title]="title" size="xmd" color="color"></ui-title>
+
+    <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+
+  </ui-card-header>
+  <ng-template [ngIf]="isSale" [ngIfElse]="billing">
+    <ng-template [ngIf]="dataUISale" [ngIfElse]="loading">
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="En {{ dataUISale.shortCampaign }} {{ thirdPerson ? 'puede lograr' : 'puedes lograr' }} " size="md-d" up></ui-text>
+          <ui-title title="{{ dataUISale.posibles6d6 }} Consultoras 6d6" size="lg-ex" down></ui-title>
+        </ui-info>
+      </div>
+      <div class="hide-mobile">
+        <p-table [value]="cars">
+          <ng-template pTemplate="header">
+            <tr>
+              <th></th>
+              <th>5D5</th>
+              <th>4D4</th>
+              <th>3D3</th>
+              <th>2D2</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-car>
+            <tr>
+              <td>MÁXIMA RETENCIÓN</td>
+              <td>{{ dataUISale.maxRetention5d5 }}</td>
+              <td>{{ dataUISale.maxRetention4d4 }}</td>
+              <td>{{ dataUISale.maxRetention3d3 }}</td>
+              <td>{{ dataUISale.maxRetention2d2 }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+      <!--Venta (Todos)-->
+    </ng-template>
+    <ng-template #loading>Loading...</ng-template>
+  </ng-template>
+  <ng-template #billing>
+    <ng-template [ngIf]="dataUIBilling" [ngIfElse]="loading">
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md-d" up></ui-text>
+          <ui-title title="{{ dataUIBilling.reached6d6 }} de {{
+            dataUIBilling.previous5d5
+          }} Consultoras 6d6" size="lg-ex" down></ui-title>
+        </ui-info>
+      </div>
+      <div class="hide-mobile">
+        <p-table [value]="cars">
+          <ng-template pTemplate="header">
+            <tr>
+              <th></th>
+              <th>5D5</th>
+              <th>4D4</th>
+              <th>3D3</th>
+              <th>2D2</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-car>
+            <tr>
+              <td>{{ thirdPerson ? 'VA LOGRANDO' : 'VAS LOGRANDO' }}</td>
+              <td>{{ dataUIBilling.reached5d5 }}</td>
+              <td>{{ dataUIBilling.reached4d4 }}</td>
+              <td>{{ dataUIBilling.reached3d3 }}</td>
+              <td>{{ dataUIBilling.reached2d2 }}</td>
+            </tr>
+            <tr>
+              <td>{{ thirdPerson ? 'PUEDE RETENER' : 'PUEDES RETENER' }}</td>
+              <td>{{ dataUIBilling.hold5d5 }}</td>
+              <td>{{ dataUIBilling.hold4d4 }}</td>
+              <td>{{ dataUIBilling.hold3d3 }}</td>
+              <td>{{ dataUIBilling.hold2d2 }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+      <!--Facturación (Todos)-->
+    </ng-template>
+    <ng-template #loading>Loading...</ng-template>
+  </ng-template>
+</ui-card>

@@ -1,0 +1,28 @@
+<div class="consolidado">
+    <ul class="list-content">
+        <li class="mr-1" ><ui-title title="Consolidado por secciones" size="md" color="#000" ></ui-title></li>
+        <li><ui-title *ngIf="days31" title=" (31 días)" size="md" color="#B9007E"></ui-title></li>
+    </ul>
+    
+    <div class="table-consolidate">
+        <p-table [columns]="cols" [value]="consolidatedUI" >
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" class="header">
+                        {{col.header}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [ngClass]="null">
+                    <td *ngFor="let col of columns; let i = index;" [ngClass]="i == '0' ? 'first' : i % 2 == 0 ? 'pair' : 'odd'">
+                      <span *ngIf="i == 0">{{ rowData[col.field] }}</span>
+                      <span *ngIf="i == 1">{{ rowData[col.field] | number: '.1-1'}} %</span>
+                      <span *ngIf="i == 2 || i == 3">S/. {{ rowData[col.field] | number: '.2-2'}}</span>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+

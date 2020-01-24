@@ -1,0 +1,77 @@
+/*{
+    outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.sales-table{
+    padding: 24px 20px;
+    background: #fff;
+    border-radius: 4px;
+
+    .pills-sale{
+        display: flex;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 26px 0px 4px;
+        button{
+            border: 1px solid #000;
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-right: 8px;
+            font-size: 14px;
+            background-color: #fff;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-family: 'Lato';
+        }
+        button.active{
+            background-color: #000;
+            color: #fff;
+        }
+    }
+    table{
+        border-collapse: separate;
+        text-align: center;
+         thead tr th{
+            padding: 12px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            color: #fcab53;
+            font-size: 14px;
+        }
+        tbody tr td{
+            font-size: 12px;
+            padding: 12px 32px;
+            background-color: #fef9eb;
+            width: 144px;
+            font-weight: bold;
+            border: 1px solid #fff;
+        }
+        tbody tr td:first-child {
+            width: 138px;
+            background-color: #fcecc4;
+            color: #2c2654;
+        }
+    }
+ 
+}
+.table-responsive{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+@media (max-width:650px){
+    .sales-table{
+        background: none;
+        padding: 0px;
+        table{
+            tbody tr td{
+                border: 1px solid transparent;
+            }
+            tbody tr td:first-child {
+                width: 92px;
+            }
+        }
+     
+    }
+  
+}

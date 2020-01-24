@@ -1,0 +1,10 @@
+<div class="listHeader" (click)="clickEvent()" [ngClass]="{'active': toggle}">
+  <div class="leftSide">
+    <ng-content>
+    </ng-content>
+  </div>
+  <div class="iconRight">
+    <!-- <ng-content select="[iconRight]"></ng-content> -->
+    <img src="assets/icons/a-icon-arrow-down-black.svg" alt="" />
+  </div>
+</div>

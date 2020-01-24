@@ -1,0 +1,45 @@
+.filter{
+  background-color: #fff;
+  border-radius: 4px;
+  hr{
+      border: 0.5px solid #d1d1d4;
+  }
+  span{
+      color: #454549;
+      font-size: 18px;
+      font-weight: bold;
+  }
+  h4{
+      color: #454549;
+      font-size: 16px;
+      margin-bottom: 12px;
+  }
+  ul{
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      li{
+          padding: 12px 0px;
+          font-size: 14px;
+      }
+  }
+  input[type="checkbox"] {
+      display: none;
+  }
+
+  input[type="checkbox"] + label span {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: -1px 4px 0 0;
+      vertical-align: middle;
+      border: 1px solid #000000;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+
+  input[type="checkbox"]:checked + label span {
+      background: url(/src/assets/check.svg);
+      background-color: #000000;
+  }
+}

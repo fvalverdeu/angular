@@ -1,0 +1,91 @@
+<form class="" [formGroup]="filterForm" (ngSubmit)="filter($event, 2)">
+  <div class="ui-g-3 filter-gain ui-g-nopad">
+    <!--<app-gain-filter></app-gain-filter>-->
+    <ui-card typeCard="CardDetail">
+      <ui-filter>
+        <div class="filter">
+          <h4>Segmentos</h4>
+          <ul>
+            <li formArrayName="segments" *ngFor="let control of segments.controls; let i = index">
+              <input type="checkbox" id="chx_{{i}}" [formControlName]="i" (change)="filter($event, 1)">
+              <label for="chx_{{i}}"> <span></span>{{segmentsData[i].name + ' (' + segmentsData[i].count + ')'}}</label>
+            </li>
+          </ul>
+        </div>
+      </ui-filter>
+    </ui-card>
+  </div>
+
+  <div class="ui-g-9 ui-sm-12 ui-g-nopad list">
+    <!--<app-gain-find></app-gain-find>-->
+    <div class="searchFind">
+      <div class="infoConsultant">
+        <div class="number-consultant">
+          <p>{{ totalRecords }} Consultoras con deuda <br class="show-mobile"> pendiente  en total</p>
+          <ui-text text="Mostrando {{currentPage}} - {{totalPages}} de {{totalRecords}}" size="md-m" color="#909094"></ui-text>
+        </div>
+        <div class="filterMobile">
+          <img src="/assets/icons/a-icon-filter.svg" alt="" />
+          <!-- <label>Filtros</label> -->
+          <ui-title title="Filtros" size="md-d" color="#000000" class="ml-1"></ui-title>
+        </div>
+      </div>
+      <!--<ui-find></ui-find>-->
+        <div class="searching">
+          <input formControlName="nameSearch" class="searchInput whiteBack" type="text"
+            placeholder="Buscar por nombre" />
+          <i class="icon-search4" (click)="filter($event, 2)"></i>
+          <!--<img src="assets/icons/a-icon-search.svg" alt="" />-->
+        </div>
+    </div>
+    <!--<app-gain-list></app-gain-list>-->
+    <div *ngFor="let item of filteredConsultants" class="list-consultant">
+      <ui-item>
+        <div class="title" itemTitle>
+          <div class="title">
+            <div class="textTitle">
+              <div class="circlePoint"></div>
+              <ui-title title="{{ item.segment_description}}" size="xsm" color="#f33162">
+              </ui-title>
+            </div>
+            <ui-text text="{{ item.name }}" size="md-d" color="#454549"></ui-text>
+          </div>
+        </div>
+        <div itemDescription class="ui-g-12">
+          <ul class="ui-g-4 ui-sm-12">
+            <li>
+              <ui-text text="Código:" size="sm-d" color="gray" class="mr-1"></ui-text>
+              <ui-text text="{{ item.code }}" size="sm-d" color="black"></ui-text>
+            </li>
+            <li>
+              <ui-text text="Celular:" size="sm-d" color="gray" class="mr-1"></ui-text>
+              <ui-text text="{{ item.phone }}" size="sm-d" color="black"></ui-text>
+            </li>
+          </ul>
+          <ul class="ui-g-4 ui-sm-12">
+            <li>
+              <ui-text text="Deuda Pendiente:" size="sm-d" color="gray" class="mr-1"></ui-text>
+              <ui-text text="{{currency}} {{ item.pending_debt | number: '.2-2' }}" size="sm-d" color="black"></ui-text>
+            </li>
+            <li>
+              <ui-text text="Pedido en Somos Belcorp:" size="sm-d" color="gray" class="mr-1"></ui-text>
+              <ui-text text="{{currency}} {{ item.orderAmount| number: '.2-2' }}" size="sm-d" color="black"></ui-text>
+            </li>
+          </ul>
+          <ul class="ui-g-4 ui-sm-12" *ngIf="isSale">
+            <li>
+              <ui-text text="Venta acumulada del periodo:" size="sm-d" color="gray" class="mr-1"></ui-text>
+              <ui-text text="{{currency}} {{ item.sale_period | number: '.2-2' }}" size="sm-d" color="black"></ui-text>
+            </li>
+            <li>
+              <ui-text text="Constancia:" size="sm-d" color="gray" class="mr-1"></ui-text>
+              <ui-text text="{{ item.constancy }}" size="sm-d" color="black"></ui-text>
+            </li>
+          </ul>
+        </div>
+      </ui-item>
+    </div>
+    <p-paginator #p *ngIf="totalRecords > 0" [rows]="rows" [totalRecords]="totalRecords" [pageLinkSize]="pageLinkSize" (onPageChange)="paginate($event)" class="pagination"></p-paginator>
+    <!--<ui-pagination [rows]="rows" [totalRecords]="totalRecords" [pageLinkSize]="pageLinkSize"></ui-pagination>-->
+  </div>
+</form>

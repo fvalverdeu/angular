@@ -1,0 +1,129 @@
+<ng-template [ngIf]="isGZ" [ngIfElse]="isSE">
+  <ui-card (click)="redirectDetail()" class="redirect">
+    <ui-card-header>
+      <img src="assets/icons/a-icon-salesandorder.svg" alt="" iconLeft  class="icon-card"/>
+      <ui-title [title]="title" size="xmd" color="color"></ui-title>
+      <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+    </ui-card-header>
+
+    <ng-template [ngIf]="isSale" [ngIfElse]="isBilling">
+      <div class="info-complete">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="En {{ uiPrevious.campaign }} lograste" size="md-d" up></ui-text>
+            <div down>
+              <ui-title title="{{currencySymbol}} {{ uiPrevious.net_sale | number: '.2-2' }}" size="lg-ex"></ui-title>
+              <ui-text text="de Venta Neta" size="md"></ui-text>
+            </div>
+          </ui-info>
+        </div>
+        <div class="info-right">
+          <ui-info>
+            <ui-title title="{{ uiPrevious.orders }}" size="lg" up></ui-title>
+            <ui-text text="Pedidos" size="md" down></ui-text>
+          </ui-info>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="En {{ uiCurrent.campaign }} tu meta es " size="md" up></ui-text>
+          <ui-title title="{{currencySymbol}} {{ uiCurrent.net_sale_goal | number: '.2-2' }} de Venta Neta" size="lg" down></ui-title>
+        </ui-info>
+      </div>
+
+      <ui-info>
+        <ui-title title="y {{ uiCurrent.orders_goal }} Pedidos 💪" size="md" up></ui-title>
+      </ui-info>
+    </ng-template>
+
+    <ng-template #isBilling>
+      <!-- SALE -->
+      <ng-template [ngIf]="isSaleEqualGoal">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="Alcanzaste tu meta en" size="md" up></ui-text>
+            <ui-title title="{{currencySymbol}} {{ uiSaleOrder.net_sale | number: '.2-2' }}" size="lg" down></ui-title>
+          </ui-info>
+        </div>
+        <ui-progress-complete [value]= "pbSale">
+          <ui-text text="Meta {{ uiCurrent.campaign }} : {{currencySymbol}} {{ uiSaleOrder.net_sale_goal | number: '.2-2' }}" size="xsm" left></ui-text>
+          <ui-title title="¡Lo lograste! 🤩" size="xsm" color ="#38be62" right></ui-title>
+        </ui-progress-complete>
+      </ng-template>
+
+      <ng-template [ngIf]="isSaleLessGoal">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="Te faltan" size="md" up></ui-text>
+            <ui-title title="{{currencySymbol}} {{ uiSaleOrder.net_sale | number: '.2-2' }}" size="lg" down></ui-title>
+          </ui-info>
+        </div>
+        <ui-progress-bar [value]= "pbSale">
+          <ui-text text="Meta {{ uiCurrent.campaign }} : {{currencySymbol}} {{ uiSaleOrder.net_sale_goal | number: '.2-2' }}" size="xsm" left></ui-text>
+          <ui-title title="¡Tú puedes!" size="xsm" color ="#b9007e" right ></ui-title>
+        </ui-progress-bar>
+      </ng-template>
+
+      <ng-template [ngIf]="isSaleGreaterGoal">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="Superaste tu meta en" size="md" up></ui-text>
+            <ui-title title="{{currencySymbol}} {{ uiSaleOrder.net_sale | number: '.2-2' }}" size="lg" down></ui-title>
+          </ui-info>
+        </div>
+        <ui-progress-complete [value]= "pbSale">
+          <ui-text text="Meta {{ uiCurrent.campaign }} : {{currencySymbol}} {{ uiSaleOrder.net_sale_goal | number: '.2-2' }}" size="xsm" left></ui-text>
+          <ui-title title="¡Lo lograste! 🤩" size="xsm" color ="#38be62" right></ui-title>
+          <img src="../../../../../../../assets/icons/a-icon-woweyes.svg" alt="">
+        </ui-progress-complete>
+      </ng-template>
+      <!-- ORDER -->
+      <ng-template [ngIf]="isOrderEqualGoal">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="Alcanzaste tu meta de" size="md" up></ui-text>
+            <ui-title title="{{ uiSaleOrder.orders }} Pedidos" size="lg" down></ui-title>
+          </ui-info>
+        </div>
+        <ui-progress-complete [value]= "pbOrder">
+          <ui-text text="Meta {{ uiSaleOrder.campaign }} : {{ uiSaleOrder.orders_goal }}" size="xsm" left></ui-text>
+          <ui-title title="¡Lo lograste! 🤩" size="xsm" color ="#38be62" right></ui-title>
+        </ui-progress-complete>
+      </ng-template>
+
+      <ng-template [ngIf]="isOrderLessGoal">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="Te faltan" size="md" up></ui-text>
+            <ui-title title="{{ uiSaleOrder.orders }} Pedidos" size="lg" down></ui-title>
+          </ui-info>
+        </div>
+        <ui-progress-bar [value]= "pbOrder">
+          <ui-text text="Meta {{ uiSaleOrder.campaign }} : {{ uiSaleOrder.orders_goal }}" size="xsm" left></ui-text>
+          <ui-title title="¡Tú puedes!" size="xsm" color ="#b9007e" right></ui-title>
+        </ui-progress-bar>
+      </ng-template>
+
+      <ng-template [ngIf]="isOrderGreaterGoal">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="Superaste tu meta en" size="md" up></ui-text>
+            <ui-title title="{{ uiSaleOrder.orders }} Pedidos" size="lg" down></ui-title>
+          </ui-info>
+        </div>
+        <ui-progress-complete [value]= "pbOrder">
+          <ui-text text="Meta {{ uiSaleOrder.campaign }} : {{ uiSaleOrder.orders_goal }}" size="xsm" left></ui-text>
+          <ui-title title="¡Lo lograste! 🤩" size="xsm" color ="#38be62" right></ui-title>
+        </ui-progress-complete>
+      </ng-template>
+
+    </ng-template>
+  </ui-card>
+</ng-template>
+
+<ng-template #isSE>
+  <app-sales-se [sectionCode]="sectionSel" [levelCode]="levelSel" [codZone]="zoneSel"></app-sales-se>
+</ng-template>
+
+<ng-template #loading>Loading...</ng-template>

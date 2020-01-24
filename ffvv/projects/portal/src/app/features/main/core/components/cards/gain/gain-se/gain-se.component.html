@@ -1,0 +1,44 @@
+<ui-card (click)="redirectDetail()" class="redirect">
+  <ui-card-header>
+    <img src="assets/icons/a-icon-collectandprofit.svg" alt="" iconLeft class="icon-card" />
+    <ui-title [title]="title" size="xmd" color="color"></ui-title>
+    <img src="assets/icons/a-icon-arrow-right.svg" alt=""iconRight />
+  </ui-card-header>
+  <ng-template [ngIf]="isSale" [ngIfElse]="billing">
+    <ng-template [ngIf]="dataGainUI" [ngIfElse]="loading">
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="{{ thirdPerson ? 'Va recuperando' : 'Vas recuperando' }}" size="md-d" up></ui-text>
+          <ui-title title="{{ dataGainUI.recovery }} %" size="lg-ex" down></ui-title>
+        </ui-info>
+      </div>
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="Ganancia proyectada" size="md-d" up></ui-text>
+          <ui-title title="{{ currencySymbol }} {{ dataGainUI.projectedGain | number: '.2-2' }}" size="lg-ex" down>
+          </ui-title>
+        </ui-info>
+      </div>
+      <!--Venta CB Todos (DOP y Otros niveles)-->
+    </ng-template>
+    <ng-template #loading>Loading...</ng-template>
+  </ng-template>
+  <ng-template #billing>
+    <ng-template [ngIf]="dataGainUI" [ngIfElse]="loading">
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="{{ thirdPerson ? 'Va recuperando' : 'Vas recuperando' }}" size="md-d" up></ui-text>
+          <ui-title title="{{ dataGainUI.recovery | number: '.1-1' }} %" size="lg-ex" down></ui-title>
+        </ui-info>
+      </div>
+      <div class="info-card">
+        <ui-info>
+          <ui-text text="Ganancia proyectada" size="md-d" up></ui-text>
+          <ui-title title="{{ currencySymbol }} {{ dataGainUI.projectedGain | number: '.2-2' }}" size="lg-ex" down>
+          </ui-title>
+        </ui-info>
+      </div>
+    </ng-template>
+    <ng-template #loading>Loading...</ng-template>
+  </ng-template>
+</ui-card>

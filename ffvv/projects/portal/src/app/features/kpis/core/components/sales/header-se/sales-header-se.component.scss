@@ -1,0 +1,28 @@
+
+.marginRight{
+  padding-left: 15px;
+}
+.marginCard{
+  padding: 0px 15px;
+}
+.marginLeft{
+  padding-right: 15px;
+}
+.firstCard{
+  display: inline-block;
+}
+@media (max-width:650px){
+
+  .marginLeft{
+    padding-right: 0px;
+    padding-bottom: 16px;
+  }
+  .marginRight{
+    padding-left: 0px;
+    padding-bottom: 16px;
+  }
+  .marginCard{
+    padding: 0px;
+    padding-bottom: 16px;
+  }
+}

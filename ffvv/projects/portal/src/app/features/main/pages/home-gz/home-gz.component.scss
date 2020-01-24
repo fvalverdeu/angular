@@ -1,0 +1,70 @@
+/*{
+    outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.container{
+    max-width: 1170px;
+    margin: auto;
+    .section-list{
+        margin-top: 52px;
+    }
+}
+.container-cards{
+    // margin-top: 32px;
+}
+
+
+.container-cards-down{
+    margin-top: 32px;
+}
+.title-cards{
+    margin: 0px 0px 12px;
+}
+.margin-right{
+    padding-right:15px
+}
+.margin-left{
+    padding-left: 15px;
+}
+.margin{
+    padding: 0px 15px;
+}
+
+@media (max-width:650px){
+    .container{
+        .section-list{
+            margin-top: 24px;
+        }
+    }
+    .profile{
+        padding: 0px 12px;
+    }
+    .campaign{
+        padding: 0px 12px 0px 0px;
+    }
+    .container-cards{
+        margin: 16px 12px 0px;
+    }
+    .title-cards{
+        margin: 0px 0px 8px;
+    }
+    .margin{
+        padding: 0px;
+        padding-bottom: 12px;
+    }
+    .margin-right{
+        padding-right: 0px;
+        padding-bottom: 12px;
+    }
+    .margin-left{
+        padding-left: 0px;
+        padding-bottom: 12px;
+    }
+    .container-cards-down{
+        padding: 0px 12px;
+        margin-top: 0px;
+    }
+}
+
+.showTitle {
+  opacity: 0;
+}

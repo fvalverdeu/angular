@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="ui-g ui-g-nopad">
+    <app-profile-user
+      class="profile ui-g-6 ui-g-nopad ui-sm-6"
+    ></app-profile-user>
+    <app-profile-campaign
+      class="campaign ui-g-6 ui-g-nopad ui-sm-6"
+    ></app-profile-campaign>
+  </div>
+  <div class="section-list">
+    <app-section-list [showZone]="showZone"></app-section-list>
+  </div>
+  <app-profile-section [selectSection]="!showTitle"></app-profile-section>
+  <div class="container-cards ui-g ui-g-nopad">
+
+    <ui-title [ngClass]="{'showTitle': !showTitle}" title="Revisa y ponte al día" size="lg-m" color="#000" class="ui-g-12 ui-g-nopad title-cards"></ui-title>
+    <app-report-campaign class="ui-g-4 ui-g-nopad ui-sm-12 margin-right"></app-report-campaign>
+
+    <app-sales-gz class="ui-g-4 ui-g-nopad ui-sm-12 margin"></app-sales-gz>
+    <app-gain-gz class="ui-g-4 ui-g-nopad ui-sm-12 margin-left"></app-gain-gz>
+  </div>
+  <div class="ui-g ui-g-nopad container-cards-down">
+    <app-retention-gz
+      class="ui-g-4 ui-g-nopad ui-sm-12 margin-right"
+    ></app-retention-gz>
+    <app-unete-gz class="ui-g-4 ui-g-nopad ui-sm-12 margin"></app-unete-gz>
+    <!--<app-road-bright></app-road-bright>-->
+  </div>
+</div>

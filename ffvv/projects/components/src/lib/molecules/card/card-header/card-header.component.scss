@@ -1,0 +1,18 @@
+.container-header-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .iconLeft{
+        margin-right: 8px;
+    }
+    .iconRight{
+        text-align: right;
+    }
+    .leftSide{
+        display: flex;
+    }
+    .title{
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,161 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@portal/components": [
+        "projects/components/src/public-api"
+        // "dist/components"
+      ],
+
+      // Atoms
+
+      "@portal/components/text": [
+        "projects/components/src/lib/atoms/text"
+        // "dist/components/src/lib/atoms/text"
+      ],
+      "@portal/components/icon": [
+        "projects/components/src/lib/atoms/icon"
+        // "dist/components/src/lib/atoms/icon"
+      ],
+      "@portal/components/checkbox": [
+        "projects/components/src/lib/atoms/checkbox"
+        // "dist/components/src/lib/atoms/checkbox"
+      ],
+      "@portal/components/pagination": [
+        "projects/components/src/lib/atoms/pagination"
+        // "dist/components/src/lib/atoms/pagination"
+      ],
+      "@portal/components/find": [
+        "projects/components/src/lib/atoms/find"
+        // "dist/components/src/lib/molecules/find"
+      ],
+      "@portal/components/card-header": [
+        "projects/components/src/lib/atoms/card/card-header"
+        // "dist/components/src/lib/molecules/card/card-header"
+      ],
+
+      // Molecules
+
+      "@portal/components/title": [
+        "projects/components/src/lib/molecules/title"
+        // "dist/components/src/lib/molecules/title"
+      ],
+      "@portal/components/card": [
+        "projects/components/src/lib/molecules/card"
+        // "dist/components/src/lib/molecules/card"
+      ],
+      "@portal/components/info": [
+        "projects/components/src/lib/molecules/info"
+        // "dist/components/src/lib/molecules/info"
+      ],
+      "@portal/components/progress-bar": [
+        "projects/components/src/lib/molecules/progress-bar"
+        // "dist/components/src/lib/molecules/progress-bar"
+      ],
+      "@portal/components/progress-complete": [
+        "projects/components/src/lib/molecules/progress-complete"
+        // "dist/components/src/lib/molecules/progress-complete"
+      ],
+      "@portal/components/filter": [
+        "projects/components/src/lib/molecules/filter"
+        // "dist/components/src/lib/molecules/filter"
+      ],
+      "@portal/components/item": [
+        "projects/components/src/lib/molecules/item"
+        // "dist/components/src/lib/molecules/item"
+      ],
+      "@portal/components/item-description": [
+        "projects/components/src/lib/molecules/item-description"
+        // "dist/components/src/lib/molecules/item-description"
+      ],
+      "@portal/components/item-title": [
+        "projects/components/src/lib/molecules/item-title"
+        // "dist/components/src/lib/molecules/item-title"
+      ],
+      "@portal/components/list": [
+        "projects/components/src/lib/molecules/list"
+        // "dist/components/src/lib/molecules/find"
+      ],
+
+      "components/*": [
+        "dist/components/*"
+      ],
+      "@portal/core": [
+        "projects/core/src/public-api"
+      ],
+      "@portal/core/pages": [
+        "projects/core/src/lib/pages"
+        // "dist/core/src/lib/services"
+      ],
+      "@portal/core/services": [
+        "projects/core/src/lib/services"
+        // "dist/core/src/lib/services"
+      ],
+      "@portal/core/interceptors": [
+        "projects/core/src/lib/interceptors"
+        // "dist/core/src/lib/interceptors"
+      ],
+      "@portal/core/rest": [
+        "projects/core/src/lib/rest"
+        // "dist/core/src/lib/rest"
+      ],
+      "@portal/core/log": [
+        "projects/core/src/lib/log"
+        // "dist/core/src/lib/log"
+      ],
+      "@portal/core/models": [
+        "projects/core/src/lib/models"
+        // "dist/core/src/lib/models"
+      ],
+      "@portal/core/models/request": [
+        "projects/core/src/lib/models/request"
+        // "dist/core/src/lib/models/request"
+      ],
+      "@portal/core/models/response": [
+        "projects/core/src/lib/models/response"
+        // "dist/core/src/lib/models/response"
+      ],
+      "@portal/core/constants": [
+        "projects/core/src/lib/constants"
+        // "dist/core/src/lib/constants"
+      ],
+      "@portal/core/utils": [
+        "projects/core/src/lib/utils"
+        // "dist/core/src/lib/utils"
+      ],
+      "@portal/core/guards": [
+        "projects/core/src/lib/guards"
+        // "dist/core/src/lib/guards"
+      ],
+      "@portal/core/graphql": [
+        "projects/core/src/lib/graphql"
+        // "dist/core/src/lib/graphql"
+      ],
+      "@portal/core/components": [
+        "projects/core/src/lib/components"
+        // "dist/core/src/lib/components"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

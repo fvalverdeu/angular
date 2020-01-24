@@ -1,0 +1,324 @@
+/*{
+  outline: 1px solid rgba(0,255,0,0.5);
+}*/
+.marginRight{
+  padding-right: 15px;
+}
+.marginCard{
+  padding: 0px 15px;
+}
+.marginLeft{
+  padding-left: 15px;
+}
+.firstCard{
+  display: inline-block;
+}
+@media (max-width:650px){
+
+  .marginLeft{
+    padding-left: 0px;
+    padding-bottom: 16px;
+  }
+  .marginRight{
+    padding-right: 0px;
+    padding-bottom: 16px;
+  }
+  .marginCard{
+    padding: 0px;
+    padding-bottom: 16px;
+  }
+}
+
+.contain-cards{
+  display: flex;
+
+}
+.leftSide{
+  padding: 24px 20px;
+  border-radius: 4px;
+  text-align: center;
+  width: 30%;
+  background: #fff;
+  margin-right: 15px;
+}
+.rightSide{
+  width: 70%;
+  background: #fff;
+  border-radius: 4px;
+  padding: 24px 20px;
+  margin-left: 15px;
+}
+
+.advice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 16px;
+}
+.bodyBack{
+  background-color: #F2FBF9;
+
+}
+.disclaimer{
+  margin: 12px auto;
+}
+
+@media (max-width:650px){
+  .contain-cards{
+    display: block;
+  }
+  .leftSide{
+    padding: 12px;
+    width: 100%;
+  }
+  .disclaimer{
+    margin: 8px 0px 0px 0px;
+    text-align: left;
+  }
+  .rightSide{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 12px;
+    padding: 12px;
+  }
+}
+
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+p{
+  margin: 0px;
+}
+
+.divided{
+  margin: 0px 16px;
+  border: 0.5px solid #eaeaec
+}
+.advice{
+  padding: 16px 15px;
+  p{
+    font-weight: bold;
+  }
+}
+
+.listaConsultant{
+  display: flex;
+  margin-top: 24px;
+  justify-content: space-around;
+  li{
+    //padding: 0px 16px;
+    text-align: center;
+    font-weight: bold;
+    p{
+      margin-top: 4px;
+    }
+    .consultant{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+    }
+  }
+  .spacing{
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
+}
+
+.colorLightBlue{
+  color:#39bbb1;
+}
+
+.hide-mobile{
+  display: block;
+}
+.show-mobile{
+  display: none;
+}
+
+
+
+/*****************************CICLO ED NUEVAS GZ****************************/
+
+.ciclo-resume{
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 24px 20px;
+  padding-right: 15px;
+  ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    //justify-content: space-between;
+    margin-top: 24px;
+    li{
+      text-align: center;
+      border-right: 1px solid #d1d1d4;
+      .consultant{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 8px;
+      }
+    }
+    li:last-child{
+      border-right: none;
+    }
+  }
+  .space{
+    letter-spacing: 1.5px;
+  }
+  .advice-retention{
+    background: #effaf9;
+  }
+  .tip{
+    color: #b9007e;
+    margin: 0px;
+    font-size: 10px;
+    display: none;
+  }
+  .advice-number{
+    padding: 16px 0px;
+    text-align: center;
+  }
+  .number-retention{
+    .title-retention{
+      display: none;
+
+    }
+    li{
+      .consultant{
+        margin-top: 8px;
+      }
+    }
+  }
+}
+.tabla-ciclo{
+
+  background: #fff;
+  border-radius: 4px;
+  padding: 24px 20px;
+  padding-left: 15px;
+  table{
+    margin-top: 16px;
+    border-collapse: separate;
+    thead tr th {
+      padding: .75rem;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      color: #39bbb1;
+    }
+    tbody tr td{
+      font-size: 12px;
+      padding: 12px 0px;
+      background-color: #effaf9;
+      font-weight: bold;
+      text-align: center;
+      width: 160px;
+    }
+    tbody tr td:first-child {
+      background-color: #cfefec;
+      color: #2c2654;
+      width: 136px;
+    }
+  }
+}
+.table-retention{
+  margin-top: 10px;
+}
+.tabla-responsive{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width:650px){
+  .show-mobile{
+    display: block;
+  }
+  .hide-mobile{
+    display: none;
+  }
+  .rightSide{
+    border-radius: 4px;
+  }
+  .listaConsultant{
+
+    li{
+      padding: 0px;
+      .consultant{
+        margin-top: 0px;
+      }
+      span{
+        font-size: 10px;
+      }
+    }
+  }
+  /*********GZ -mobile*********/
+  .ciclo-resume{
+    padding: 0px;
+    background: none;
+    ul{
+      margin-top: 12px;
+    }
+    .advice-retention{
+      background: #fff;
+      display: block;
+      padding: 12px;
+      border-radius: 4px;
+      .advice-number{
+        background: #effaf9;
+        padding: 16px;
+        text-align: center;
+        border-radius: 4px;
+      }
+      .tip{
+        display: block;
+        margin-top: 8px;
+      }
+    }
+    .number-retention{
+      background: #fff;
+      border-radius: 4px;
+      margin-top: 12px;
+      justify-content: space-around;
+      padding: 12px;
+      .title-retention{
+        display: block;
+      }
+      .border{
+        border-right: 1px solid #d1d1d4;
+      }
+      li{
+        .consultant{
+          margin-top: 0px;
+        }
+      }
+    }
+   
+  }
+  .tabla-ciclo{
+    background: none;
+    padding: 0px;
+    table{
+      thead tr th{
+        font-size: 10px;
+        width: 100%;
+        outline: transparent;
+      }
+      tbody tr td{
+        background: #e7f2f5;
+        width: 100%;
+      }
+      tbody tr td:first-child {
+        width: 92px;
+      }
+    }
+  }
+}

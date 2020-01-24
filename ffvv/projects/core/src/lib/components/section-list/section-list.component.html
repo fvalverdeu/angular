@@ -1,0 +1,19 @@
+<div class="ui-g zonas-gz">
+  <div class="section ui-g-12 ui-g-nopad">
+    <div class="zoneTotal ui-g-2" *ngIf="showZone" [ngClass]="{'active' : !selectedSection}" (click)="loadData('')"><span>Tu Zona</span></div>
+    <span class="arrowLeft" [ngClass]="{'cursorDefault':scrollLeftEnd}" id="arrow-left" (click)="scrollLeft()">
+      <!-- <img src="assets/icons/a-icon-arrow-left.svg" /> -->
+      <i [ngClass]="{'sf-icon-arrow-left':!scrollLeftEnd, 'sf-icon-arrow-left-white':scrollLeftEnd}"></i>
+    </span>
+    <ul #sectionsContent class="section-list ui-g-10">
+      <ng-template [ngIf]="data" [ngIfElse]="loading">
+        <li *ngFor="let item of data" [ngClass]="{'active' : selectedSection==item.section_code}" (click)="loadData(item.section_code)">{{ item.section_code }}</li>
+      </ng-template>
+      <ng-template #loading>Loading...</ng-template>
+    </ul>
+    <span class="arrowRight" [ngClass]="{'cursorDefault':scrollRightEnd}" id="arrow-right" (click)="scrollRight()">
+      <!-- <img src="assets/icons/a-icon-arrow-right.svg" /> -->
+      <i [ngClass]="{'sf-icon-arrow-right':!scrollRightEnd, 'sf-icon-arrow-right-white':scrollRightEnd}"></i>
+    </span>
+  </div>
+</div>

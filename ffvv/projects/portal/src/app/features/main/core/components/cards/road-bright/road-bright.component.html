@@ -1,0 +1,43 @@
+<ui-card>
+  <ui-card-header>
+    <img src="assets/icons/a-icon-add-moneda.svg" alt="" iconLeft  class="icon-card"/>
+    <ui-title [title]="title" size="xmd" color="color"></ui-title>
+    <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+  </ui-card-header>
+  <ng-template [ngIf]="data" [ngIfElse]="loading">
+    <div class="info-card">
+      <ui-info>
+        <ui-text text="En C08 lograste" size="md" up></ui-text>
+        <ui-title title="12 Cambios de Nivel" size="lg" down></ui-title>
+      </ui-info>
+    </div>
+    <p-table [value]="cars">
+      <ng-template pTemplate="header">
+        <tr>
+          <th></th>
+          <th>TOPACIO</th>
+          <th>PERLA</th>
+          <th>ÁMBAR</th>
+          <th>CORAL</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>C08</td>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>ACUM. <br> C03 A C08</td>
+          <td>5</td>
+          <td>4</td>
+          <td>2</td>
+          <td>0</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-template>
+  <ng-template #loading>Loading...</ng-template>
+</ui-card>

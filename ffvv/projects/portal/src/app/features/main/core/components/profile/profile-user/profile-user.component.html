@@ -1,0 +1,51 @@
+<ng-template [ngIf]="isSE" [ngIfElse]="GZ">
+  <div class="profileUser Container" >
+    <h3>Hola {{ profileUI.names }}</h3>
+    <p>
+      <span class="hide-mobile mr-2">{{ profileUI.role }}</span>  Sección {{ profileUI.section }} - {{ profileUI.cod_zone }}
+      <span [ngSwitch]="profileUI.cod_country">
+        <span *ngSwitchCase="'BO'" class="ml-2"><img src="/assets/icons/BO.png" alt=""></span>
+        <span *ngSwitchCase="'CL'" class="ml-2"><img src="/assets/icons/CL.png" alt=""></span>
+        <span *ngSwitchCase="'CO'" class="ml-2"><img src="/assets/icons/CO.png" alt=""></span>
+        <span *ngSwitchCase="'CR'" class="ml-2"><img src="/assets/icons/CR.png" alt=""></span>
+        <span *ngSwitchCase="'EC'" class="ml-2"><img src="/assets/icons/EC.png" alt=""></span>
+        <span *ngSwitchCase="'SV'" class="ml-2"><img src="/assets/icons/SV.png" alt=""></span>
+        <span *ngSwitchCase="'GT'" class="ml-2"><img src="/assets/icons/GT.png" alt=""></span>
+        <span *ngSwitchCase="'MX'" class="ml-2"><img src="/assets/icons/MX.png" alt=""></span>
+        <span *ngSwitchCase="'PA'" class="ml-2"><img src="/assets/icons/PA.png" alt=""></span>
+        <span *ngSwitchCase="'PE'" class="ml-2"><img src="/assets/icons/PE.png" alt=""></span>
+        <span *ngSwitchCase="'PR'" class="ml-2"><img src="/assets/icons/PR.png" alt=""></span>
+        <span *ngSwitchCase="'DO'" class="ml-2"><img src="/assets/icons/DO.png" alt=""></span>
+        <span *ngSwitchDefault>...</span>
+      </span>
+    </p>
+    <div class="state">
+      <div class="circle"></div>
+      <span>Nivel {{ profileUI.level }}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #GZ>
+  <div class="profileUser Container" >
+    <h3>Hola {{ profileUI.names }}</h3>
+    <p>
+      Gerente de Zona {{ profileUI.cod_zone }}
+      <span [ngSwitch]="profileUI.cod_country">
+        <span *ngSwitchCase="'BO'"><img src="/assets/icons/BO.png" alt=""></span>
+        <span *ngSwitchCase="'CL'"><img src="/assets/icons/CL.png" alt=""></span>
+        <span *ngSwitchCase="'CO'"><img src="/assets/icons/CO.png" alt=""></span>
+        <span *ngSwitchCase="'CR'"><img src="/assets/icons/CR.png" alt=""></span>
+        <span *ngSwitchCase="'EC'"><img src="/assets/icons/EC.png" alt=""></span>
+        <span *ngSwitchCase="'SV'"><img src="/assets/icons/SV.png" alt=""></span>
+        <span *ngSwitchCase="'GT'"><img src="/assets/icons/GT.png" alt=""></span>
+        <span *ngSwitchCase="'MX'"><img src="/assets/icons/MX.png" alt=""></span>
+        <span *ngSwitchCase="'PA'"><img src="/assets/icons/PA.png" alt=""></span>
+        <span *ngSwitchCase="'PE'"><img src="/assets/icons/PE.png" alt=""></span>
+        <span *ngSwitchCase="'PR'"><img src="/assets/icons/PR.png" alt=""></span>
+        <span *ngSwitchCase="'DO'"><img src="/assets/icons/DO.png" alt=""></span>
+        <span *ngSwitchDefault>...</span>
+      </span>
+    </p>
+  </div>
+</ng-template>

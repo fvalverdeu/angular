@@ -1,0 +1,106 @@
+<ng-template [ngIf]="isSE" [ngIfElse]="isGZ">
+  <div class="venta">
+    <ui-card class="ui-g-4 ui-sm-12 ui-g-nopad marginRight" typeCard="CardDetail">
+      <div class="sellCard whiteBack ">
+        <ul class="listContent">
+          <li>
+            <ui-title title="% Recuperación {{ previousUI.campaign }}" size="lg-m"></ui-title>
+            <ui-title title="{{ previousUI.charge | number: '.1-1' }}%" size="lg-m" color="#B9007E"></ui-title>
+          </li>
+        </ul>
+        <hr />
+        <ul class="listContent">
+          <li>
+            <ui-title title="Avance de Ganancia {{ previousUI.campaign }}" size="lg-m"></ui-title>
+            <ui-title title="{{currency}} {{ previousUI.total_gain | number: '.2-2' }}" size="lg-m" color="#B9007E">
+            </ui-title>
+          </li>
+        </ul>
+        <hr />
+        <ul class="listContent">
+          <li>
+            <ui-title title="Ganancia total proyectada" size="lg-m"></ui-title>
+            <ui-title title="{{currency}} {{ previousUI.total_projected_gain | number: '.2-2' }}" size="lg-m"
+              color="#B9007E"></ui-title>
+          </li>
+        </ul>
+        <div class="tip">
+          <div class="tipIcon">
+            ☝
+          </div>
+          <div class="grayText">
+            <p>La ganancia proyectada se calcula en base a la suma de la
+              ganancia por pedidos + ganancia por concursos.</p>
+          </div>
+        </div>
+      </div>
+    </ui-card>
+    <ui-card class="ui-g-8 ui-sm-12 ui-g-nopad marginLeft" typeCard="CardDetail" backGround="none">
+      <div class="gain ">
+        <!--<h4>Detalle ganancia proyectada C08</h4>-->
+        <div class="leftSideContainer">
+          <div class="headerInfo">
+            <div>
+              <ui-title title="Ganancia por pedidos" size="lg-m" color="#000000"></ui-title>
+              <ui-title title="Total: {{currency}} {{ previousUI.total_orders | number: '.2-2'}}" size="xmd"
+                color="#38BE62"></ui-title>
+            </div>
+            <img src="assets/icons/a-icon-arrow-down-black.svg" class="show-mobile" alt="">
+          </div>
+          <ul class="listContent">
+            <li *ngIf="previousUI.high_value_orders > 0">
+              <ui-text text="Pedidos Alto Valor (PAV)" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.high_value_orders | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+            <li *ngIf="previousUI.low_value_orders > 0">
+              <ui-text text="Pedidos Bajo Valor (PBV)" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.low_value_orders | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+          </ul>
+        </div>
+        <hr class="hide-mobile" />
+        <div class="rightSideContainer">
+          <div class="headerInfo">
+            <div>
+              <ui-title title="Ganancia por concursos" size="lg-m" color="#000000"></ui-title>
+              <ui-title title="Total: {{currency}} {{ previousUI.total_concourse | number: '.2-2' }}" size="xmd"
+                color="#38BE62"></ui-title>
+            </div>
+            <img src="assets/icons/a-icon-arrow-down-black.svg" class="show-mobile" alt="">
+          </div>
+          <ul class="listContent">
+            <li *ngIf="previousUI.capitalization > 0">
+              <ui-text text="Capitalización" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.capitalization | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+            <li *ngIf="previousUI.i6d6 > 0">
+              <ui-text text="Retención 6D6" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.i6d6 | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+            <li *ngIf="previousUI.products_release > 0">
+              <ui-text text="Lanzamiento de productos" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.products_release | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+            <li *ngIf="previousUI.new_fixed > 0">
+              <ui-text text="Fija Nuevas" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.new_fixed | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+            <li *ngIf="previousUI.change_level > 0">
+              <ui-text text="Cambio de nivel" size="md-d" color="#000000"></ui-text>
+              <ui-title title="{{currency}} {{ previousUI.change_level | number: '.2-2' }}" size="md-d"></ui-title>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ui-card>
+    <!--<app-gain-recovery class="ui-g-4 ui-sm-12 ui-g-nopad marginRight"></app-gain-recovery>-->
+    <!--<app-gain-gains class="ui-g-8 ui-sm-12 ui-g-nopad marginLeft"></app-gain-gains>-->
+  </div>
+</ng-template>
+
+<ng-template #isGZ>
+  <div class="ui-g-12 ui-g-nopad">
+    <app-gain-recovery [recoveryUI]="recoveryUI" (day31)="day31Confirmation($event)" class="ui-g-4 ui-g-nopad ui-sm-12 marginRight"></app-gain-recovery>
+    <app-gain-consolidated [days31]="day31" [consolidatedUI]="consolidatedUI" class="ui-g-8 ui-g-nopad ui-sm-12 marginLeft"></app-gain-consolidated>
+  </div>
+</ng-template>

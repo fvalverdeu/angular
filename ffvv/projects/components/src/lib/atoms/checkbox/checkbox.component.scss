@@ -1,0 +1,19 @@
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="checkbox"]:checked + label span {
+    background: url(/src/assets/check.svg);
+    background-color: #000000;
+}

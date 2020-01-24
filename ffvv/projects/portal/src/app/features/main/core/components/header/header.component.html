@@ -1,0 +1,91 @@
+<div class="container">
+  <nav>
+    <div class="menu-responsive" (click)="toggleMenuMobile()">
+      <img src="../../../../../../assets/icons/a-icon-menu.svg" alt="">
+    </div>
+    <div class="leftSide">
+      <div class="logo">
+        <img src="../../../../../../assets/logo/logo-white.svg" alt="">
+      </div>
+      <ul class="menuBar">
+        <li *ngFor="let menu of optionsHeader" (click)="toggleMenu()">
+          <span>{{ menu.description }}</span>
+          <ng-container *ngIf="haveData(menu.sub_option)">
+            <i class="icon-arrow-down12"></i>
+            <!--<i class="sf-icon-arrow-down"></i>-->
+            <ul class="options" *ngIf="showMenu">
+              <li *ngFor="let subMenu of menu.sub_option">
+                  <i class="icon-checkbox-unchecked mr-2"></i><span>{{ subMenu.description }}</span></li>
+            </ul>
+          </ng-container>
+        </li>
+      </ul>
+    </div> 
+    <div class="rightSide">
+      <div class="notification">
+        <i class="sf-icon-bell"></i>
+      </div>
+      <div class="profile" (click)="togglePerfil()">
+        <div class="avatar"></div>
+        <i class="icon-arrow-down12" style="color: #fff;"></i>
+        <ul class="options-right" *ngIf="showPerfil">
+          <li>
+            <i class="sf-icon-woman mr-2"></i>
+            <span>Mi Perfil</span>
+          </li>
+          <li>
+            <i class="icon-switch2 mr-2"></i>
+            <span (click)="signOut()">Cerrar Sesión</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="containGeneral" >
+
+    <!-- <app-sac *ngIf="isLogin"></app-sac> -->
+    
+      <div class="Container ui-g">
+        <div class="leftSidebar" [ngClass]="{'enter':showMenuMobile}">
+          <ul class="dropdown">
+            <li><span>Inicio</span>  </li>
+            <li> <span>Mi Perfil</span> </li>
+            <li>
+              <span> Reportes </span>
+              <i class="icon-arrow-down12"></i>
+              <ul class="dropdown-options">
+                  <li>
+                    <i class="icon-checkbox-unchecked mr-2"></i>
+                    <span>Reportes de Cierre</span>
+                  </li>
+                  <li>
+                    <i class="icon-checkbox-unchecked mr-2"></i>
+                    <span>Bolsa de Pedidos</span>
+                  </li>
+                  <li>
+                    <i class="icon-checkbox-unchecked mr-2"></i>
+                    <span>Pedidos Web</span>
+                  </li>
+                  <li>
+                    <i class="icon-checkbox-unchecked mr-2"></i>
+                    <span>Cobranzas</span>
+                  </li>
+                  <li>
+                    <i class="icon-checkbox-unchecked mr-2"></i>
+                    <span> Intención de Pedido</span>
+                  </li>
+                </ul>
+            </li>
+              
+            <li><span> Buscar Consultoras</span></li>
+          </ul>
+          <div  class="logout-mobile">
+            <i class="icon-checkbox-unchecked mr-2"></i>
+            <span (click)="signOut()">Cerrar Sesión</span>
+          </div>
+        </div>
+        
+        <div class="layoutMask" *ngIf="showMenuMobile"></div>--> <!---Mask para el layout-->
+    </div>
+  </div>

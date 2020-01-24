@@ -1,0 +1,33 @@
+.pagination{
+  float: right;
+  margin-top: 40px;
+}
+
+:host{
+  ::ng-deep .ui-paginator{
+    background-color: transparent;
+    border: none;
+    .ui-paginator-first{
+      display: none;
+    }
+    .ui-paginator-last{
+      display: none;
+    }
+    .ui-paginator-prev{
+      color: #000;
+      background: url(/assets/icons/a-icon-arrow-left.svg) center center no-repeat;
+
+    }
+    .ui-paginator-icon{
+     color: transparent;
+    }
+    .ui-paginator-next{
+      background: url(/assets/icons/a-icon-arrow-right.svg) center center  no-repeat;
+    }
+    .ui-paginator-pages .ui-paginator-page.ui-state-active{
+      background-color: transparent;
+      color: #b9007e;
+      font-weight: bold;
+    }
+  }
+}

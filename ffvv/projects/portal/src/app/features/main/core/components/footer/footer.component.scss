@@ -1,0 +1,90 @@
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.Footer {
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  font-size: 12px;
+  bottom: 0;
+  margin-top: 72px;
+
+  .Container{
+      max-width: 1170px;
+      margin: 0 auto;
+      margin-top:20px;
+      .menuFooter{
+        .title{
+          font-weight: bold;
+          font-size: 14px;
+         }
+        ul{
+          li{
+            color: #454549;
+            list-style: none;
+              a{
+                line-height:1.71;
+                color: #454549;
+                font-size: 14px;
+                text-decoration: none;
+              }
+          }
+
+        }
+      }
+    }
+  .CopyrightFooter {
+    text-align: end;
+    font-size: 10px;
+    color: #000;
+    margin-top: 20px;
+    padding: 0px 20px;
+  }
+  .FooterMobile{
+    padding: 16px 0px;
+    font-family: 'Lato';
+    display: none;
+    .logoBelcorp{
+      padding: 0px 20px;
+    }
+    
+    .listFooter{
+      padding: 0px;
+      list-style: none;
+      li{
+        padding: 16px 20px;
+        border-bottom: 1px solid #eaeaec;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 14px;
+        a{
+          color: #454549;
+        }
+        i {
+          float: right;
+        }
+      }
+      li:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .social{
+    text-align: right;
+    padding: 0px 20px;
+  }
+  
+}
+
+@media (max-width:650px) {
+  .Footer{
+    .FooterMobile{
+      display: block
+    }
+  }
+  .Container{
+    display: none;
+  }
+}

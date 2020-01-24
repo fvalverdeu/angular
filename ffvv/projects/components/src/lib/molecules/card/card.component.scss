@@ -1,0 +1,16 @@
+@import "../../mixins";
+
+.Card {
+  @include card;
+  //width: 370px;
+}
+
+.CardDetail {
+  @include card-detail;
+}
+
+@media (max-width:650px){
+  .Card{
+    height: fit-content;
+  }
+}

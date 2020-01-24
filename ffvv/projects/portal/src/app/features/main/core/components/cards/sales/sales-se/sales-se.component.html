@@ -1,0 +1,216 @@
+<ui-card (click)="redirectDetail()" class="redirect">
+  <ui-card-header>
+    <img src="assets/icons/a-icon-salesandorder.svg" alt="" iconLeft class="icon-card" />
+    <ui-title [title]="title" size="xmd" color="color"></ui-title>
+    <img src="assets/icons/a-icon-arrow-right.svg" alt="" iconRight />
+  </ui-card-header>
+
+  <ng-template [ngIf]="isSale" [ngIfElse]="billing">
+    <ng-template [ngIf]="isBrightRoad" [ngIfElse]="noBrightRoad">
+
+      <ng-template [ngIf]="data" [ngIfElse]="loading">
+        <div class="info-complete">
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="En {{ uiPrevious.campaign }} {{ thirdPerson ? 'logró' : 'lograste' }}" size="md-d" up></ui-text>
+              <div down >
+                <ui-title title="{{currencySymbol}} {{ uiPrevious.catalog_sale | number: '.2-2' }}" size="lg-ex"></ui-title>
+                <ui-text text="de Venta Catálogo" size=""></ui-text>
+              </div>
+            </ui-info>
+          </div>
+          <div class="info-right">
+            <ui-info>
+              <ui-title title="{{ uiPrevious.orders }}" size="lg" up></ui-title>
+              <ui-text text="Pedidos" size="md" down></ui-text>
+            </ui-info>
+          </div>
+        </div>
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="En {{ uiCurrent.campaign }} {{ thirdPerson ? 'su' : 'tu' }} meta de Venta Catálogo es" size="md-d" up></ui-text>
+            <div down class="aim">
+              <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale_goal | number: '.2-2' }}" size="lg-ex" class="mr-1"></ui-title>
+              <span>💪</span>
+            </div>
+          </ui-info>
+        </div>
+      </ng-template>
+      <!--<ng-template #loading>Loading...</ng-template>-->
+
+    </ng-template>
+
+    <ng-template #noBrightRoad>
+      <ng-template [ngIf]="data" [ngIfElse]="loading">
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="En {{ uiPrevious.campaign }} {{ thirdPerson ? 'logró' : 'lograste' }}" size="md" up></ui-text>
+            <ui-title title="{{currencySymbol}} {{ uiPrevious.catalog_sale | number: '.2-2' }} de Venta Catálogo" size="lg" down>
+            </ui-title>
+          </ui-info>
+        </div>
+        <div class="info-card">
+          <ui-info>
+            <ui-text text="En {{ uiCurrent.campaign }} {{ thirdPerson ? 'su' : 'tu' }} meta es" size="md" up></ui-text>
+            <div down class="aim">
+              <ui-title title="{{ uiCurrent.orders_goal }} Pedidos" size="lg" class="mr-1"></ui-title>
+              <span>💪</span>
+            </div>
+          </ui-info>
+        </div>
+      </ng-template>
+
+    </ng-template>
+  </ng-template>
+
+  <ng-template #billing>
+    <ng-template [ngIf]="isBrightRoad" [ngIfElse]="noBrightRoad">
+
+      <ng-template [ngIf]="data" [ngIfElse]="loading">
+
+        <ng-template [ngIf]="lackOrders">
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Le' : 'Te' }} faltan" size="md" up></ui-text>
+              <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale | number: '.2-2' }}" size="lg" down></ui-title>
+            </ui-info>
+          </div>
+          <ui-progress-bar [value]="valuePbar" >
+            <ui-text text="Meta {{currencySymbol}} {{ uiCurrent.catalog_sale_goal | number: '.2-2' }}" size="xsm" left></ui-text>
+            <ui-title title="{{ thirdPerson ? '¡Ella puede!' : '¡Tú puedes!' }}" size="xsm" color="#b9007e" right >
+            </ui-title>
+          </ui-progress-bar>
+          <div class="info-card-padding">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md" up></ui-text>
+              <div down class="venta-facturacion">
+                <ui-title title="{{ uiCurrent.orders }} Pedidos" size="lg"></ui-title>
+                <span>👍</span>
+              </div>
+            </ui-info>
+          </div>
+        </ng-template>
+        <!--primero-->
+        <ng-template [ngIf]="reachGoal">
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Alcanzó su' : 'Alcanzaste tu' }} meta de" size="md" up></ui-text>
+              <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale | number: '.2-2' }}" size="lg" down></ui-title>
+            </ui-info>
+          </div>
+          <ui-progress-complete [value]="valuePbar">
+            <ui-title title="¡Lo lograste! 🤩" size="xsm" color="#38be62" right></ui-title>
+          </ui-progress-complete>
+          <div class="info-card-padding">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md" up></ui-text>
+              <div down class="venta-facturacion">
+                <ui-title title="{{ uiCurrent.orders }} Pedidos" size="lg"></ui-title>
+                <span>👍</span>
+              </div>
+            </ui-info>
+          </div>
+        </ng-template>
+        <!--segundo-->
+        <ng-template [ngIf]="overcomeGoal">
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Superó su' : 'Superaste tu' }} meta en" size="md" up></ui-text>
+              <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale | number: '.2-2'}}" size="lg" down></ui-title>
+            </ui-info>
+            <ui-progress-complete [value]="valuePbar">
+              <ui-text text="Meta {{currencySymbol}} {{ uiCurrent.catalog_sale_goal | number: '.2-2' }}" size="xsm" left></ui-text>
+              <ui-title title="{{ thirdPerson ? '¡Lo logró!' : '¡Lo lograste!' }} 🤩" size="xsm" color="38be62" right></ui-title>
+            </ui-progress-complete>
+          </div>
+          
+          <div class="info-card-padding">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md" up></ui-text>
+              <div down class="venta-facturacion">
+                <ui-title title="{{ uiCurrent.orders }} Pedidos" size="lg" class="mr-1"></ui-title>
+                <span>👍</span>
+              </div>
+            </ui-info>
+          </div>
+        </ng-template>
+      </ng-template>
+
+    </ng-template>
+    <ng-template #noBrightRoad>
+      <ng-template [ngIf]="data" [ngIfElse]="loading">
+
+        <ng-template [ngIf]="lackOrders">
+          <div class="info-card-padding">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md" up></ui-text>
+              <div down class="venta-facturacion">
+                <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale | number: '2.'}} de Venta Catálogo" size="lg" class="mr-2">
+                </ui-title>
+                <span>👍</span>
+              </div>
+            </ui-info>
+          </div>
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Le faltan' : 'Te faltan' }}" size="md" up></ui-text>
+              <ui-title title="{{ uiCurrent.orders }} Pedidos" size="lg" down></ui-title>
+            </ui-info>
+          </div>
+          <ui-progress-bar [value]="valuePbar">
+            <ui-text text="Meta {{ uiCurrent.orders_goal }}" size="xsm" left></ui-text>
+            <ui-title title="{{ thirdPerson ? '¡Ella puede!' : '¡Tú puedes!' }}"  size="xsm" color="#b9007e" right></ui-title>
+          </ui-progress-bar>
+        </ng-template>
+        <!---tercero-->
+        <ng-template [ngIf]="reachGoal">
+          <div class="info-card-padding">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md" up></ui-text>
+              <div down class="venta-facturacion">
+                <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale | number: '2.'}} de Venta Catálogo" size="lg" class="mr-2">
+                </ui-title><span>👍</span>
+              </div>
+            </ui-info>
+          </div>
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Alcanzó su' : 'Alcanzaste tu' }} meta de" size="md" up></ui-text>
+              <ui-title title="{{ uiCurrent.orders }} Pedidos" size="lg" down></ui-title>
+            </ui-info>
+          </div>
+          <ui-progress-complete [value]="valuePbar">
+            <ui-title title="{{ thirdPerson ? '¡Lo logró!' : '¡Lo lograste!' }} 🤩" size="xsm" color="#38be62" right></ui-title>
+            <img src="../../../../../../../assets/icons/a-icon-woweyes.svg" alt="">
+          </ui-progress-complete>
+        </ng-template>
+        <!---cuarto-->
+        <ng-template [ngIf]="overcomeGoal">
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Va logrando' : 'Vas logrando' }}" size="md" up></ui-text>
+              <div down class="venta-facturacion">
+                <ui-title title="{{currencySymbol}} {{ uiCurrent.catalog_sale | number: '2.'}} de Venta Catálogo" size="lg" class="mr-2">
+                </ui-title><span>👍</span>
+              </div>
+            </ui-info>
+          </div>
+          <div class="info-card">
+            <ui-info>
+              <ui-text text="{{ thirdPerson ? 'Superó su' : 'Superaste tu' }} meta en" size="md" up></ui-text>
+              <ui-title title="{{ uiCurrent.orders }} Pedidos" size="lg" down></ui-title>
+            </ui-info>
+          </div>
+          <ui-progress-complete [value]="valuePbar">
+            <ui-text text="Meta {{ uiCurrent.orders_goal }}" size="xsm" left></ui-text>
+            <ui-title title="{{ thirdPerson ? '¡Lo logró!' : '¡Lo lograste!' }} 🤩"  color="#38be62" size="xsm" right></ui-title>
+            <img src="../../../../../../../assets/icons/a-icon-woweyes.svg" alt="">
+          </ui-progress-complete>
+        </ng-template>
+
+      </ng-template>
+      <!--<ng-template #loading>Loading...</ng-template>-->
+    </ng-template>
+  </ng-template>
+  <ng-template #loading>Loading...</ng-template>
+</ui-card>
