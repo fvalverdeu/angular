@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <form action="" class="col-6" [formGroup]="grupo">
+            <h3>{{titulo}}</h3>
+            <div class="form-group">
+                <input type="text" class="form-control" 
+                placeholder="Nombre" name="nombre"
+                formControlName="nombre">
+            </div>
+            <span class="error" *ngIf="grupo.get('nombre').hasError('required') && 
+            grupo.get('nombre').touched">El nombre es requerido</span>
+            <div class="form-group">
+                <input type="text" class="form-control" 
+                placeholder="Correo" name="correo"
+                formControlName="correo">
+            </div>
+            <span class="error" *ngIf="grupo.get('correo').hasError('required') && 
+            grupo.get('correo').touched">El correo es requerido</span>
+
+            <span class="error" *ngIf="grupo.get('correo').hasError('pattern') && 
+            grupo.get('correo').touched">El formato no es correcto</span>
+            <!-- <p>{{ participante.correo }}</p> -->
+            <div class="form-group">
+                <input type="password" class="form-control" 
+                placeholder="Contraseña" name="contrasena"
+                formControlName="contrasena">
+            </div>
+            <span class="error" *ngIf="grupo.get('contrasena').hasError('required') && 
+            grupo.get('contrasena').touched">La contraseña es requerida</span>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-success" (click)="registroParticipante()">Registrar</button>
+            </div>
+            <!-- <p>{{ participante | json }}</p>
+            <p>{{ conversion(participante) }}</p> -->
+
+        </form>
+    </div>
+</div>
+<!-- <div class="container">
+    <div class="row justify-content-center">
+        <form action="" class="col-6">
+            <h3>{{titulo}}</h3>
+            <div class="form-group">
+                <input type="text" class="form-control" 
+                placeholder="Nombre" value={{nombre}}>
+                <input type="text" class="form-control" 
+                placeholder="Nombre" [ngModel]="nombre" name="nombre">
+                <div class="form-group">
+                    <input type="text" class="form-control" [value]="correo" 
+                    placeholder="Correo" (input)='tipeo($event)'>
+                    <input type="text" class="form-control" placeholder="Correo" 
+                    [(ngModel)]="correo" name="correo">
+                </div>
+                <p>{{ correo }}</p>
+                <div class="form-group">
+                    <input type="password" class="form-control" 
+                    placeholder="Contraseña" [(ngModel)]="contrasena" name="contrasena">
+                </div>
+                <div class="d-flex jsutify-content-center">
+                    <button class="btn btn-success">Registrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
