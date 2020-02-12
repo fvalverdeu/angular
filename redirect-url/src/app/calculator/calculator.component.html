@@ -1,0 +1,14 @@
+<h2>{{title}}</h2>
+<div class="container">
+  <h2>Calculator</h2>
+  <span>Number 1: </span> <input #num1 id="num1" type="number">
+  <span>Number 2: </span> <input #num2 id="num2" type="number">
+
+  <br> <br> <br>
+
+  <button (click)="printAdd(num1.value, num2.value)" id="button">Sum!!</button>
+
+  <br> <br> <br>
+
+  Result: <input type="text" #result id="result">
+</div>
